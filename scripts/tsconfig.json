@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "types": ["node", "axios", "cheerio"],
+        "watch": true
+    }
+}

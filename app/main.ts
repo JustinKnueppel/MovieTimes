@@ -1,81 +1,81 @@
 import { AxiosPromise } from "../node_modules/axios/index";
 
 const axios = require('axios');
-const cheerio = require('cheerio')
+const cheerio = require('cheerio');
 
 const baseURL: string = 'https://www.amctheatres.com';
 
-// axios.defaults.baseURL = baseURL;
+axios.defaults.baseURL = baseURL;
+
+type DateFormat = string | number;
 
 interface MovieTime {
     time: string;
     link: string;
 };
+
 interface Movie {
-    title: string;
-    link: string;
-    times: MovieTime[];
+    title?: string;
+    link?: string;
+    times?: MovieTime[];
 };
 
-let formatDate = function(date: Date): string {
-    let dd: any = date.getDate();
+function formatDate(date: Date): DateFormat {
+    let dd: DateFormat = date.getDate();
     dd = dd >= 10 ? dd : `0${dd}`
-    let mm: any = date.getMonth() + 1;
+    let mm: DateFormat = date.getMonth() + 1;
     mm = mm >= 10 ? mm : `0${mm}`
-    let yyyy: number = date.getFullYear();
+    let yyyy: DateFormat = date.getFullYear();
     return `${yyyy}-${mm}-${dd}`
 }
 
-
-const date: string = formatDate(new Date());
 let theatres: string[] = ['amc-lennox-town-center-24', 'amc-dublin-village-18']
-let uri: string = `/movie-theatres/showtimes/all/${date}/${theatres[1]}/all`;
 
-let url: string = `${baseURL}${uri}`;
+function getMovieListings(theatre: string, date: Date = new Date()): Movie[] {
+    let formattedDate: DateFormat = formatDate(date);
+    let uri: string = `/movie-theatres/showtimes/all/${formattedDate}/${theatre}/all`;
 
-let movies = [];
+    let movies: Movie[] = [];
 
-let request: AxiosPromise = axios(url);
-request.then((response) => {
-    console.log('Got html');
-    const $ = cheerio.load(response.data);
-    $('div[class="ShowtimesByTheatre-maincol-scroll"]').find('div[class="ShowtimesByTheatre-film"]').each((_: number, e: CheerioElement) => {
-        movies.push($(e));
-    });
-    let movieTitle = $(movies[0]).find('a.MovieTitleHeader-title > h2').text();
-    console.log(movieTitle);
-    let movieLink = `${baseURL}${$(movies[0]).find('a.MovieTitleHeader-title').attr('href')}`;
-    console.log(movieLink);
-    let movieTimes = [];
-    $(movies[0]).find('div.Showtime a.Btn').each((i, e) => {
-        movieTimes.push($(e).text());
-    });
-    console.log(movieTimes);
-    let movieTimeLinks = []
-    $(movies[0]).find('div.Showtime a.Btn').each((i, e) => {
-        movieTimeLinks.push($(e).attr('href'));
-    });
-    console.log(movieTimeLinks);
+    axios(uri)
+        .then((response) => {
+            console.log('Got html');
 
-    let times: MovieTime[] = [];
-    for (let i = 0; i < movieTimes.length; i++) {
-        times.push({
-            time: movieTimes[i],
-            link: movieTimeLinks[i]
+            const $ = cheerio.load(response.data);
+            $('div[class="ShowtimesByTheatre-maincol-scroll"]').find('div[class="ShowtimesByTheatre-film"]').each((_: number, movieElem: CheerioElement) => {
+                let movie: Movie = {};
+
+                movie.title = $(movieElem).find('a.MovieTitleHeader-title > h2').text();
+            
+                movie.link = `${baseURL}${$(movieElem).find('a.MovieTitleHeader-title').attr('href')}`;
+            
+                let movieTimes: string[] = [];
+                $(movieElem).find('div.Showtime a.Btn').each((i, e) => {
+                    movieTimes.push($(e).text());
+                });
+            
+                let movieTimeLinks: string[] = [];
+                $(movieElem).find('div.Showtime a.Btn').each((i, e) => {
+                    movieTimeLinks.push($(e).attr('href'));
+                });
+            
+                movie.times = [];
+                for (let i = 0; i < movieTimes.length; i++) {
+                    movie.times.push({
+                        time: movieTimes[i],
+                        link: movieTimeLinks[i]
+                    });
+                };
+
+                movies.push(movie);
+            });
+            return movies;
+        })
+        .catch((err) => {
+            console.log("Error");
+            return movies;
         });
-        console.log(`Pushed ${movieTimes[i]}`);
-    };
-    let movie: Movie = {
-        title: movieTitle,
-        link: movieLink,
-        times: times
-    };
-    console.log(movie);
 
-})
-.catch((err) => {
-    console.log("Error");
-});
+}
 
-
-
+console.log(getMovieListings(theatres[1]));

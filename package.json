@@ -1,0 +1,26 @@
+{
+  "name": "movietimes",
+  "version": "1.0.0",
+  "description": "This project will pull movie times for specific theatres and create a formatted output",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
+    "eslint": "^5.16.0",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinKnueppel/MovieTimes.git"
+  },
+  "author": "Justin Knueppel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustinKnueppel/MovieTimes/issues"
+  },
+  "homepage": "https://github.com/JustinKnueppel/MovieTimes#readme"
+}

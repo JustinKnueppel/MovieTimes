@@ -5,7 +5,17 @@ const cheerio = require('cheerio')
 
 const baseURL: string = 'https://www.amctheatres.com';
 
-axios.defaults.baseURL = baseURL;
+// axios.defaults.baseURL = baseURL;
+
+interface MovieTime {
+    time: string;
+    link: string;
+};
+interface Movie {
+    title: string;
+    link: string;
+    times: MovieTime[];
+};
 
 let formatDate = function(date: Date): string {
     let dd: any = date.getDate();
@@ -21,10 +31,13 @@ const date: string = formatDate(new Date());
 let theatres: string[] = ['amc-lennox-town-center-24', 'amc-dublin-village-18']
 let uri: string = `/movie-theatres/showtimes/all/${date}/${theatres[1]}/all`;
 
+let url: string = `${baseURL}${uri}`;
+
 let movies = [];
 
-let request: AxiosPromise = axios(uri);
+let request: AxiosPromise = axios(url);
 request.then((response) => {
+    console.log('Got html');
     const $ = cheerio.load(response.data);
     $('div[class="ShowtimesByTheatre-maincol-scroll"]').find('div[class="ShowtimesByTheatre-film"]').each((_: number, e: CheerioElement) => {
         movies.push($(e));
@@ -43,6 +56,21 @@ request.then((response) => {
         movieTimeLinks.push($(e).attr('href'));
     });
     console.log(movieTimeLinks);
+
+    let times: MovieTime[] = [];
+    for (let i = 0; i < movieTimes.length; i++) {
+        times.push({
+            time: movieTimes[i],
+            link: movieTimeLinks[i]
+        });
+        console.log(`Pushed ${movieTimes[i]}`);
+    };
+    let movie: Movie = {
+        title: movieTitle,
+        link: movieLink,
+        times: times
+    };
+    console.log(movie);
 
 })
 .catch((err) => {

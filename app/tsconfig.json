@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "esnext",
-        "types": ["node", "axios", "cheerio"],
+        "types": ["node", "axios", "cheerio", "express"],
         "watch": true
     }
 }

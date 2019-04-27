@@ -1,5 +1,3 @@
-import { AxiosPromise } from "../node_modules/axios/index";
-
 const axios = require('axios');
 const cheerio = require('cheerio');
 
@@ -9,15 +7,15 @@ axios.defaults.baseURL = baseURL;
 
 type DateFormat = string | number;
 
-interface MovieTime {
+export interface MovieTime {
     time: string;
     link: string;
 };
 
-interface Movie {
-    title?: string;
-    link?: string;
-    times?: MovieTime[];
+export interface Movie {
+    title: string;
+    link: string;
+    times: MovieTime[];
 };
 
 function formatDate(date: Date): DateFormat {
@@ -31,7 +29,7 @@ function formatDate(date: Date): DateFormat {
 
 let theatres: string[] = ['amc-lennox-town-center-24', 'amc-dublin-village-18']
 
-async function getMovieListings(theatre: string, date: Date = new Date()): Promise<Movie[]> {
+export async function getMovieListings(theatre: string, date: Date = new Date()): Promise<Movie[]> {
     let formattedDate: DateFormat = formatDate(date);
     let uri: string = `/movie-theatres/showtimes/all/${formattedDate}/${theatre}/all`;
 
@@ -41,8 +39,12 @@ async function getMovieListings(theatre: string, date: Date = new Date()): Promi
         let response = await axios(uri);
 
         const $ = cheerio.load(response.data);
-        $('div[class="ShowtimesByTheatre-maincol-scroll"]').find('div[class="ShowtimesByTheatre-film"]').each((_: number, movieElem: CheerioElement) => {
-            let movie: Movie = {};
+        $('div[class="ShowtimesByTheatre-maincol-scroll"]').find('div[class="ShowtimesByTheatre-film"]').each((_: number, movieElem) => {
+            let movie: Movie = {
+                title: "",
+                link: "",
+                times: []
+            };
 
             movie.title = $(movieElem).find('a.MovieTitleHeader-title > h2').text();
         
@@ -67,7 +69,6 @@ async function getMovieListings(theatre: string, date: Date = new Date()): Promi
             };
 
             movies.push(movie);
-            console.log(movie);
 
         });
     } catch (err)  {
@@ -77,9 +78,9 @@ async function getMovieListings(theatre: string, date: Date = new Date()): Promi
     return movies;
 }
 
-getMovieListings(theatres[1]).then((movieListings) => {
-    console.log("Done");
-})
-.catch((e) => {
-    console.log("Error retrieving promise");
-});
+// getMovieListings(theatres[1]).then((movieListings) => {
+//     console.log(JSON.stringify(movieListings));
+// })
+// .catch((e) => {
+//     console.log("Error retrieving promise");
+// });

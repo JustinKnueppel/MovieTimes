@@ -68,7 +68,11 @@ function getMovieListings(theatre, date) {
                     response = _a.sent();
                     $_1 = cheerio.load(response.data);
                     $_1('div[class="ShowtimesByTheatre-maincol-scroll"]').find('div[class="ShowtimesByTheatre-film"]').each(function (_, movieElem) {
-                        var movie = {};
+                        var movie = {
+                            title: "",
+                            link: "",
+                            times: []
+                        };
                         movie.title = $_1(movieElem).find('a.MovieTitleHeader-title > h2').text();
                         movie.link = "" + baseURL + $_1(movieElem).find('a.MovieTitleHeader-title').attr('href');
                         var movieTimes = [];
@@ -88,7 +92,6 @@ function getMovieListings(theatre, date) {
                         }
                         ;
                         movies.push(movie);
-                        console.log(movie);
                     });
                     return [3 /*break*/, 4];
                 case 3:
@@ -102,8 +105,10 @@ function getMovieListings(theatre, date) {
         });
     });
 }
-getMovieListings(theatres[1]).then(function (movieListings) {
-    console.log("Done");
-})["catch"](function (e) {
-    console.log("Error retrieving promise");
-});
+exports.getMovieListings = getMovieListings;
+// getMovieListings(theatres[1]).then((movieListings) => {
+//     console.log(JSON.stringify(movieListings));
+// })
+// .catch((e) => {
+//     console.log("Error retrieving promise");
+// });

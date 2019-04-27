@@ -41,24 +41,14 @@ var baseURL = 'https://www.amctheatres.com';
 axios.defaults.baseURL = baseURL;
 ;
 ;
-function formatDate(date) {
-    var dd = date.getDate();
-    dd = dd >= 10 ? dd : "0" + dd;
-    var mm = date.getMonth() + 1;
-    mm = mm >= 10 ? mm : "0" + mm;
-    var yyyy = date.getFullYear();
-    return yyyy + "-" + mm + "-" + dd;
-}
 var theatres = ['amc-lennox-town-center-24', 'amc-dublin-village-18'];
 function getMovieListings(theatre, date) {
-    if (date === void 0) { date = new Date(); }
     return __awaiter(this, void 0, void 0, function () {
-        var formattedDate, uri, movies, response, $_1, err_1;
+        var uri, movies, response, $_1, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    formattedDate = formatDate(date);
-                    uri = "/movie-theatres/showtimes/all/" + formattedDate + "/" + theatre + "/all";
+                    uri = "/movie-theatres/showtimes/all/" + date + "/" + theatre + "/all";
                     movies = [];
                     _a.label = 1;
                 case 1:

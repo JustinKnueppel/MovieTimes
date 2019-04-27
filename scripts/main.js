@@ -34,32 +34,47 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
 exports.__esModule = true;
-var amcMovies_1 = require("./app/amcMovies");
-var bodyParser = require('body-parser');
-var express = require('express');
-var app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.get('/api/amc', function (req, res) { return __awaiter(_this, void 0, void 0, function () {
-    var listings, err_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                console.log("Theatre: " + req.body.theatre + ", Date: " + req.body.date);
-                return [4 /*yield*/, amcMovies_1.getMovieListings(req.body.theatre, req.body.date)];
-            case 1:
-                listings = _a.sent();
-                return [2 /*return*/, res.send(listings)];
-            case 2:
-                err_1 = _a.sent();
-                return [2 /*return*/, res.send("Error")];
-            case 3: return [2 /*return*/];
-        }
+var baseURL = 'localhost';
+var port = process.env.PORT || 8000;
+function formatDate(date) {
+    var dd = date.getDate();
+    dd = dd >= 10 ? dd : "0" + dd;
+    var mm = date.getMonth() + 1;
+    mm = mm >= 10 ? mm : "0" + mm;
+    var yyyy = date.getFullYear();
+    return yyyy + "-" + mm + "-" + dd;
+}
+function getAMC(theatre, date) {
+    if (date === void 0) { date = new Date(); }
+    return __awaiter(this, void 0, void 0, function () {
+        var formattedDate, url, movieInfo, response, err_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    formattedDate = formatDate(date);
+                    url = baseURL + ":" + port + "/amc?theatre=" + theatre + "&date=" + formattedDate;
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    console.log("Pinging URL " + url);
+                    return [4 /*yield*/, fetch(url)];
+                case 2:
+                    response = _a.sent();
+                    movieInfo = response.json();
+                    return [3 /*break*/, 4];
+                case 3:
+                    err_1 = _a.sent();
+                    console.log('Error occurred fetching API');
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/, movieInfo];
+            }
+        });
     });
-}); });
-app.listen(process.env.PORT || 8000);
+}
+getAMC('amc-dublin-village-18')
+    .then(function (movies) {
+    console.log(JSON.stringify(movies));
+})["catch"](function (err) {
+    console.log("An error occurred resolving promise");
+});

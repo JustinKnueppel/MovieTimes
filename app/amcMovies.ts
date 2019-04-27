@@ -5,8 +5,6 @@ const baseURL: string = 'https://www.amctheatres.com';
 
 axios.defaults.baseURL = baseURL;
 
-type DateFormat = string | number;
-
 export interface MovieTime {
     time: string;
     link: string;
@@ -18,20 +16,10 @@ export interface Movie {
     times: MovieTime[];
 };
 
-function formatDate(date: Date): DateFormat {
-    let dd: DateFormat = date.getDate();
-    dd = dd >= 10 ? dd : `0${dd}`
-    let mm: DateFormat = date.getMonth() + 1;
-    mm = mm >= 10 ? mm : `0${mm}`
-    let yyyy: DateFormat = date.getFullYear();
-    return `${yyyy}-${mm}-${dd}`
-}
-
 let theatres: string[] = ['amc-lennox-town-center-24', 'amc-dublin-village-18']
 
-export async function getMovieListings(theatre: string, date: Date = new Date()): Promise<Movie[]> {
-    let formattedDate: DateFormat = formatDate(date);
-    let uri: string = `/movie-theatres/showtimes/all/${formattedDate}/${theatre}/all`;
+export async function getMovieListings(theatre: string, date: string): Promise<Movie[]> {
+    let uri: string = `/movie-theatres/showtimes/all/${date}/${theatre}/all`;
 
     let movies: Movie[] = [];
 

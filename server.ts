@@ -11,8 +11,9 @@ app.use(bodyParser.urlencoded({
 
 app.get('/api/amc', async (req, res) => {
     try {
-        let listings: Movie[] = await getMovieListings(req.body.theatre);
-        return res.send(JSON.stringify(listings));
+        console.log(`Theatre: ${req.body.theatre}, Date: ${req.body.date}`);
+        let listings: Movie[] = await getMovieListings(req.body.theatre, req.body.date);
+        return res.send(listings);
     } catch (err) {
         return res.send("Error");
     }

@@ -14,10 +14,16 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+app.get('/', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    return res.sendFile('/index.html', { root: __dirname});
+});
+
 app.get('/api/amc', async (req, res) => {
     try {
         console.log(`Theatre: ${req.query.theatre}, Date: ${req.query.date}`);
         let listings: Movie[] = await getMovieListings(req.query.theatre, req.query.date);
+        res.setHeader('Content-Type', 'application/json');
         return res.send(listings);
     } catch (err) {
         return res.send("Error");

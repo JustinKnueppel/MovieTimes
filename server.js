@@ -49,6 +49,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.get('/', function (req, res) {
+    res.setHeader('Content-Type', 'text/html');
+    return res.sendFile('/index.html', { root: __dirname });
+});
 app.get('/api/amc', function (req, res) { return __awaiter(_this, void 0, void 0, function () {
     var listings, err_1;
     return __generator(this, function (_a) {
@@ -59,6 +63,7 @@ app.get('/api/amc', function (req, res) { return __awaiter(_this, void 0, void 0
                 return [4 /*yield*/, amcMovies_1.getMovieListings(req.query.theatre, req.query.date)];
             case 1:
                 listings = _a.sent();
+                res.setHeader('Content-Type', 'application/json');
                 return [2 /*return*/, res.send(listings)];
             case 2:
                 err_1 = _a.sent();

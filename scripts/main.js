@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -34,9 +33,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-exports.__esModule = true;
 var baseURL = 'localhost';
-var port = process.env.PORT || 8000;
+var port = 8000;
 function formatDate(date) {
     var dd = date.getDate();
     dd = dd >= 10 ? dd : "0" + dd;
@@ -48,7 +46,7 @@ function formatDate(date) {
 function getAMC(theatre, date) {
     if (date === void 0) { date = new Date(); }
     return __awaiter(this, void 0, void 0, function () {
-        var formattedDate, url, movieInfo, response, err_1;
+        var formattedDate, url, movieInfo, config, response, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -58,7 +56,13 @@ function getAMC(theatre, date) {
                 case 1:
                     _a.trys.push([1, 3, , 4]);
                     console.log("Pinging URL " + url);
-                    return [4 /*yield*/, fetch(url)];
+                    config = {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        }
+                    };
+                    return [4 /*yield*/, fetch(url, config)];
                 case 2:
                     response = _a.sent();
                     movieInfo = response.json();
@@ -66,13 +70,15 @@ function getAMC(theatre, date) {
                 case 3:
                     err_1 = _a.sent();
                     console.log('Error occurred fetching API');
+                    console.log(err_1);
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/, movieInfo];
             }
         });
     });
 }
-getAMC('amc-dublin-village-18')
+var AMCtheatres = ['amc-lennox-town-center-24', 'amc-dublin-village-18', 'amc-columbus-10'];
+getAMC(AMCtheatres[1])
     .then(function (movies) {
     console.log(JSON.stringify(movies));
 })["catch"](function (err) {

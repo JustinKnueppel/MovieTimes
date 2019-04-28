@@ -16,8 +16,6 @@ export interface Movie {
     times: MovieTime[];
 };
 
-let theatres: string[] = ['amc-lennox-town-center-24', 'amc-dublin-village-18']
-
 export async function getMovieListings(theatre: string, date: string): Promise<Movie[]> {
     let uri: string = `/movie-theatres/showtimes/all/${date}/${theatre}/all`;
 

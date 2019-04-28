@@ -1,7 +1,5 @@
-import {Movie} from '../app/amcMovies';
-
 const baseURL: string = 'localhost'
-const port = process.env.PORT || 8000;
+const port = 8000;
 
 type DateFormat = string | number;
 
@@ -23,15 +21,24 @@ async function getAMC(theatre: string, date: Date = new Date()) {
     
     try {
         console.log(`Pinging URL ${url}`);
-        const response = await fetch(url);
+        let config = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }
+        const response = await fetch(url, config);
         movieInfo = response.json();
     } catch (err) {
         console.log('Error occurred fetching API');
+        console.log(err);
     }
     return movieInfo;
 }
 
-getAMC('amc-dublin-village-18')
+const AMCtheatres: string[] = ['amc-lennox-town-center-24', 'amc-dublin-village-18', 'amc-columbus-10']
+
+getAMC(AMCtheatres[1])
     .then((movies) => {
         console.log(JSON.stringify(movies));
     })

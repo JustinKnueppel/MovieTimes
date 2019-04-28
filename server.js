@@ -39,7 +39,12 @@ exports.__esModule = true;
 var amcMovies_1 = require("./app/amcMovies");
 var bodyParser = require('body-parser');
 var express = require('express');
+var cors = require('cors');
 var app = express();
+app.use(cors({
+    credentials: true,
+    origin: true
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
@@ -50,8 +55,8 @@ app.get('/api/amc', function (req, res) { return __awaiter(_this, void 0, void 0
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                console.log("Theatre: " + req.body.theatre + ", Date: " + req.body.date);
-                return [4 /*yield*/, amcMovies_1.getMovieListings(req.body.theatre, req.body.date)];
+                console.log("Theatre: " + req.query.theatre + ", Date: " + req.query.date);
+                return [4 /*yield*/, amcMovies_1.getMovieListings(req.query.theatre, req.query.date)];
             case 1:
                 listings = _a.sent();
                 return [2 /*return*/, res.send(listings)];

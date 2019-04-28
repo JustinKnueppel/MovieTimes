@@ -41,7 +41,6 @@ var baseURL = 'https://www.amctheatres.com';
 axios.defaults.baseURL = baseURL;
 ;
 ;
-var theatres = ['amc-lennox-town-center-24', 'amc-dublin-village-18'];
 function getMovieListings(theatre, date) {
     return __awaiter(this, void 0, void 0, function () {
         var uri, movies, response, $_1, err_1;

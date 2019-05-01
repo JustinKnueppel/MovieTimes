@@ -72,4 +72,4 @@ app.get('/api/amc', function (req, res) { return __awaiter(_this, void 0, void 0
         }
     });
 }); });
-app.listen(process.env.PORT || 8000);
+app.listen(process.env.API_PORT || 8000);

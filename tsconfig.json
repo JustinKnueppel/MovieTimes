@@ -1,7 +1,11 @@
 {
     "compilerOptions": {
         "target": "esnext",
-        "types": ["node", "axios", "cheerio", "express"],
+        "typesRoots": ["./node_modules/@types"],
         "watch": true
-    }
+    },
+    "files": [  "Backend/server.ts", 
+                "Backend/app/amcMovies.ts", 
+                "Frontent/scripts/main.ts"
+            ]
 }

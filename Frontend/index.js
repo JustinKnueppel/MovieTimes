@@ -7,8 +7,8 @@ app.get('/', (req, res) => {
 });
 
 
-let PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-    console.log(`Started frontent on port ${PORT}`);
+    console.log(`Started frontend on port ${PORT}`);
 });

@@ -30,4 +30,7 @@ app.get('/api/amc', async (req, res) => {
     }
 });
 
-app.listen(process.env.API_PORT || 8000);
+const PORT = process.env.API_PORT || 8000;
+app.listen(PORT, () => {
+    console.log(`API Started on port ${PORT}`);
+});

@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 app.get('/api/amc', async (req, res) => {
     try {
         console.log(`Theatre: ${req.query.theatre}, Date: ${req.query.date}`);
-        let listings: Movie[] = await getMovieListings(req.query.theatre, req.query.date);
+        let listings = await getMovieListings(req.query.theatre, req.query.date);
         res.setHeader('Content-Type', 'application/json');
         return res.send(listings);
     } catch (err) {

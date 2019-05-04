@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -33,6 +34,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+exports.__esModule = true;
+var amcMovies_1 = require("../../Backend/app/amcMovies");
 var baseURL = 'localhost';
 var port = 8000;
 function formatDate(date) {
@@ -51,10 +54,12 @@ function getAMC(theatre, date) {
             switch (_a.label) {
                 case 0:
                     formattedDate = formatDate(date);
-                    url = baseURL + ":" + port + "/amc?theatre=" + theatre + "&date=" + formattedDate;
-                    _a.label = 1;
-                case 1:
-                    _a.trys.push([1, 3, , 4]);
+                    //testing purposes until looking further into date api
+                    formattedDate = '2019-05-03';
+                    return [4 /*yield*/, amcMovies_1.getMovieListings(theatre, formattedDate)];
+                case 1: return [2 /*return*/, _a.sent()];
+                case 2:
+                    _a.trys.push([2, 4, , 5]);
                     console.log("Pinging URL " + url);
                     config = {
                         method: "GET",
@@ -63,17 +68,27 @@ function getAMC(theatre, date) {
                         }
                     };
                     return [4 /*yield*/, fetch(url, config)];
-                case 2:
+                case 3:
                     response = _a.sent();
                     movieInfo = response.json();
-                    return [3 /*break*/, 4];
-                case 3:
+                    return [3 /*break*/, 5];
+                case 4:
                     err_1 = _a.sent();
                     console.log('Error occurred fetching API');
                     console.log(err_1);
-                    return [3 /*break*/, 4];
-                case 4: return [2 /*return*/, movieInfo];
+                    return [3 /*break*/, 5];
+                case 5: return [2 /*return*/, movieInfo];
             }
+        });
+    });
+}
+function getAMCOffline(theatre, date) {
+    if (date === void 0) { date = new Date(); }
+    return __awaiter(this, void 0, void 0, function () {
+        var formattedDate;
+        return __generator(this, function (_a) {
+            formattedDate = formatDate(date);
+            return [2 /*return*/];
         });
     });
 }

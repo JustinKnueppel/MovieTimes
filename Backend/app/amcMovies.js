@@ -37,14 +37,26 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var axios = require('axios');
 var cheerio = require('cheerio');
+var db_1 = require("./db");
+var baseURL = 'https://www.amctheatres.com';
+axios.defaults.baseURL = baseURL;
 ;
 ;
+/**
+ * Return the movie listings for the given theatre and date.
+ * @param theatre AMC unique theatre name.
+ * @param date yyyy-mm-dd date.
+ */
 function getMovieListings(theatre, date) {
     return __awaiter(this, void 0, void 0, function () {
         var uri, movies, response, $_1, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    // If listing is already in database do not retrieve again
+                    if (db_1["default"].contains(theatre, date)) {
+                        return [2 /*return*/, Promise.resolve(db_1["default"].get(theatre, date))];
+                    }
                     uri = "/movie-theatres/showtimes/all/" + date + "/" + theatre + "/all";
                     movies = [];
                     _a.label = 1;
@@ -87,13 +99,19 @@ function getMovieListings(theatre, date) {
                     return [3 /*break*/, 4];
                 case 4:
                     ;
+                    // Update the database
+                    db_1["default"].post(theatre, date, movies);
                     return [2 /*return*/, movies];
             }
         });
     });
 }
 exports.getMovieListings = getMovieListings;
-var baseURL = 'https://api.amctheatres.com';
+/**
+ * Get AMC API information about the given theatre on the given date.
+ * @param theatreID Unique AMC theatre ID.
+ * @param date yyyy-mm-dd date.
+ */
 function getTheatre(theatreID, date) {
     return __awaiter(this, void 0, void 0, function () {
         var resp;
@@ -107,13 +125,16 @@ function getTheatre(theatreID, date) {
         });
     });
 }
-getTheatre(377, '2019-05-01')
-    .then(function (resp) {
-    console.log(resp.data._embedded.showtimes[0]);
-})["catch"](function (err) {
-    console.log('Error occurred in amcMovies');
-});
-// getMovieListings(theatres[1]).then((movieListings) => {
+// Test API
+// getTheatre(377, '2019-05-01')
+//     .then((resp) => {
+//         console.log(resp.data._embedded.showtimes[0]);
+//     })
+//     .catch((err) => {
+//         console.log('Error occurred in amcMovies');
+//     });
+// Test database
+// getMovieListings('amc-columbus-10', '2019-05-03').then((movieListings) => {
 //     console.log(JSON.stringify(movieListings));
 // })
 // .catch((e) => {

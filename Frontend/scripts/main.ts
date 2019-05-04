@@ -1,3 +1,5 @@
+import {getMovieListings} from '../../Backend/app/amcMovies';
+
 const baseURL: string = 'localhost'
 const port = 8000;
 
@@ -14,6 +16,12 @@ function formatDate(date: Date): DateFormat {
 
 async function getAMC(theatre: string, date: Date = new Date()) {
     let formattedDate: DateFormat = formatDate(date);
+    //testing purposes until looking further into date api
+    formattedDate = '2019-05-03';
+
+    return await getMovieListings(theatre, formattedDate);
+
+    //End testing
 
     const url: string = `${baseURL}:${port}/amc?theatre=${theatre}&date=${formattedDate}`;
 
@@ -34,6 +42,10 @@ async function getAMC(theatre: string, date: Date = new Date()) {
         console.log(err);
     }
     return movieInfo;
+}
+
+async function getAMCOffline(theatre: string, date: Date = new Date()) {
+    let formattedDate: DateFormat = formatDate(date);
 }
 
 const AMCtheatres: string[] = ['amc-lennox-town-center-24', 'amc-dublin-village-18', 'amc-columbus-10']

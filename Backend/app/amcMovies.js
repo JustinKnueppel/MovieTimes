@@ -37,8 +37,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var axios = require('axios');
 var cheerio = require('cheerio');
-var baseURL = 'https://www.amctheatres.com';
-axios.defaults.baseURL = baseURL;
 ;
 ;
 function getMovieListings(theatre, date) {
@@ -95,6 +93,26 @@ function getMovieListings(theatre, date) {
     });
 }
 exports.getMovieListings = getMovieListings;
+var baseURL = 'https://api.amctheatres.com';
+function getTheatre(theatreID, date) {
+    return __awaiter(this, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, axios(baseURL + "/v2/theatres/" + theatreID + "/showtimes/" + date, { headers: { 'X-AMC-Vendor-Key': process.env.API_KEY } })];
+                case 1:
+                    resp = _a.sent();
+                    return [2 /*return*/, resp];
+            }
+        });
+    });
+}
+getTheatre(377, '2019-05-01')
+    .then(function (resp) {
+    console.log(resp.data._embedded.showtimes[0]);
+})["catch"](function (err) {
+    console.log('Error occurred in amcMovies');
+});
 // getMovieListings(theatres[1]).then((movieListings) => {
 //     console.log(JSON.stringify(movieListings));
 // })

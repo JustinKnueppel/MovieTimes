@@ -64,6 +64,20 @@ export async function getMovieListings(theatre: string, date: string): Promise<M
     return movies;
 }
 
+async function getTheatre(theatreID: number, date: string)/*: Promise<Movie[]>*/ {
+    const resp = await axios(`${baseURL}/v2/theatres/${theatreID}/showtimes/${date}`, {headers: {'X-AMC-Vendor-Key': process.env.API_KEY}});
+    return resp;
+}
+
+// getTheatre(377, '2019-05-01')
+//     .then((resp) => {
+//         console.log(resp.data._embedded.showtimes[0]);
+//     })
+//     .catch((err) => {
+//         console.log('Error occurred in amcMovies');
+//     });
+
+
 // getMovieListings(theatres[1]).then((movieListings) => {
 //     console.log(JSON.stringify(movieListings));
 // })

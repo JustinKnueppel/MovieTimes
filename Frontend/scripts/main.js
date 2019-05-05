@@ -92,8 +92,8 @@ function getAMCOffline(theatre, date) {
         });
     });
 }
-var AMCtheatres = ['amc-lennox-town-center-24', 'amc-dublin-village-18', 'amc-columbus-10'];
-getAMC(AMCtheatres[1])
+exports.AMCtheatres = ['amc-lennox-town-center-24', 'amc-dublin-village-18', 'amc-columbus-10'];
+getAMC(exports.AMCtheatres[1])
     .then(function (movies) {
     console.log(JSON.stringify(movies));
 })["catch"](function (err) {

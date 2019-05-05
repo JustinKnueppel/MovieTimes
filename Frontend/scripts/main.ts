@@ -48,7 +48,7 @@ async function getAMCOffline(theatre: string, date: Date = new Date()) {
     let formattedDate: DateFormat = formatDate(date);
 }
 
-const AMCtheatres: string[] = ['amc-lennox-town-center-24', 'amc-dublin-village-18', 'amc-columbus-10']
+export const AMCtheatres: string[] = ['amc-lennox-town-center-24', 'amc-dublin-village-18', 'amc-columbus-10']
 
 getAMC(AMCtheatres[1])
     .then((movies) => {

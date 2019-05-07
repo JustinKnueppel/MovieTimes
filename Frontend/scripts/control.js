@@ -1,12 +1,24 @@
 const AMCtheatres = [{id: 'amc-lennox-town-center-24', name: 'AMC Lennox'}, {id: 'amc-dublin-village-18', name: 'AMC Dublin Village'}, {id: 'amc-columbus-10', name: 'AMC Hilliard'}];
-
+/**
+ * Filter the movies based on the theatre.
+ * @param {string} theatre Unique theatre name to be toggled.
+ * @param {boolean} checked Indicator for whether the movie theatre should be shown or not.
+ */
 function filterTheatre(theatre, checked) {
     console.log(`Now ${checked ? 'showing': 'hiding'} ${theatre}`);
 }
-
+/**
+ * Filter the movies based on when their showtime begins.
+ * @param {Date} start The earliest movie time to be shown.
+ * @param {Date} end The latest movie time to be shown.
+ */
 function filterTime(start, end) {
     console.log(`Now showing movies between ${start} and ${end}`);
 }
+/**
+ * Determine proper filtering of data.
+ * @param {Object} data Information on what needs to be filtered.
+ */
 function filter(data) {
     switch(data.field) {
         case 'theatre':
@@ -16,7 +28,9 @@ function filter(data) {
             filterTime(data.start, data.end);
     }
 }
-
+/**
+ * Display theatre options to the user.
+ */
 function showTheatreOptions() {
     if (document.getElementById('theatre-options')) {
         return;
@@ -38,7 +52,9 @@ function showTheatreOptions() {
         options.append(theatre['name']);
     }
 }
-
+/**
+ * Return the current hour in 12 hour format along with an am/pm indicator.
+ */
 function getCurrentHour() {
     let date = new Date();
     let hour = date.getHours() + 1;
@@ -54,6 +70,11 @@ function getCurrentHour() {
 
     return [hour, pm];
 }
+/**
+ * Append as a child to the given element a time UI with the given attributes.
+ * @param {container element} elem to be the parent element of the time UI.
+ * @param {Object} opts attributes to be set for the time UI.
+ */
 function appendTimeUI(elem, opts) {
     let time = document.createElement('div');
 
@@ -110,19 +131,22 @@ function appendTimeUI(elem, opts) {
 
     elem.appendChild(time);
 }
-
+/**
+ * Return a date object representing the time limit inside the given element.
+ * @param timeElem div containing the time selectors.
+ */
 function parseTimeInput(timeElem) {
-    let hourDD = timeElem.querySelector('select[name="hours"');
+    let hourDD = timeElem.querySelector('select[name="hours"]');
     let hour = hourDD.options[hourDD.selectedIndex].value;
 
-    let ampmDD = timeElem.querySelector('select[name="ampm"');
+    let ampmDD = timeElem.querySelector('select[name="ampm"]');
     let ampm = ampmDD.options[ampmDD.selectedIndex].value;
 
     if (ampm === 'pm') {
         hour += 12;
     }
 
-    let minuteDD = timeElem.querySelector('select[name="minutes"');
+    let minuteDD = timeElem.querySelector('select[name="minutes"]');
     let minute = minuteDD.options[minuteDD.selectedIndex].value;
 
     let time = new Date();
@@ -133,6 +157,9 @@ function parseTimeInput(timeElem) {
     return time;
 }
 
+/**
+ * Get the time options that were filled in.
+ */
 function getTimeConstraints() {
     let timeStartElem = document.getElementById('time-start');
     let timeEndElem = document.getElementById('time-end');
@@ -143,6 +170,9 @@ function getTimeConstraints() {
     return {start: startTime, end: endTime};
 }
 
+/**
+ * Display time filtering options.
+ */
 function showTimeOptions() {
     if (document.getElementById('time-options')) {
         return;
@@ -174,6 +204,9 @@ function showTimeOptions() {
 
 
 // Control elements of page
+/**
+ * Wait for window to load and control button clicks.
+ */
 window.onload = () => {
 document.addEventListener('click', function(event) {
     /*

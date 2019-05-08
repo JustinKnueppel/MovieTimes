@@ -45,35 +45,38 @@ function getShowtimes(theatre, theatreInfo) {
     return showtimes;
 }
 
-function loadShowtimes(showtimes) {
+function loadShowtime(showtime) {
     let table = document.getElementById('movie-table');
-    console.log(table);
+
+    let tr = document.createElement('tr');
+
+    let td = document.createElement('td');
+    let time = document.createElement('a');
+    time.setAttribute('href', showtime.showtimeLink);
+    time.innerText = showtime.showtime;
+    td.appendChild(time);
+    tr.appendChild(td)
+
+    td = document.createElement('td');
+    let movie = document.createElement('a');
+    movie.setAttribute('href', showtime.movieLink);
+    movie.innerText = showtime.title;
+    td.appendChild(movie);
+    tr.appendChild(td);
+
+    td = document.createElement('td');
+    let theatre = document.createElement('a');
+    //TODO: Add theatre links
+    theatre.setAttribute('href', '#');
+    theatre.innerText = showtime.theatre;
+    td.appendChild(theatre);
+    tr.appendChild(td);
+
+    table.appendChild(tr);
+}
+function loadShowtimes(showtimes) {
     for (showtime of showtimes) {
-        let tr = document.createElement('tr');
-
-        let td = document.createElement('td');
-        let time = document.createElement('a');
-        time.setAttribute('href', showtime.showtimeLink);
-        time.innerText = showtime.showtime;
-        td.appendChild(time);
-        tr.appendChild(td)
-
-        td = document.createElement('td');
-        let movie = document.createElement('a');
-        movie.setAttribute('href', showtime.movieLink);
-        movie.innerText = showtime.title;
-        td.appendChild(movie);
-        tr.appendChild(td);
-
-        td = document.createElement('td');
-        let theatre = document.createElement('a');
-        //TODO: Add theatre links
-        theatre.setAttribute('href', '#');
-        theatre.innerText = showtime.theatre;
-        td.appendChild(theatre);
-        tr.appendChild(td);
-
-        table.appendChild(tr);
+        loadShowtime(showtime);
     }
 }
 function main() {

@@ -1,3 +1,5 @@
+// import {TheatresData, AMCtheatres, filterDataByTheatre, loadData} from './loaddata';
+let AMCtheatres = [{ id: 'amc-lennox-town-center-24', name: 'AMC Lennox' }, { id: 'amc-dublin-village-18', name: 'AMC Dublin Village' }, { id: 'amc-columbus-10', name: 'AMC Hilliard' }];
 /**
  * Filter the movies based on the theatre.
  * @param {string} theatre Unique theatre name to be toggled.
@@ -5,6 +7,8 @@
  */
 function filterTheatre(theatreID, checked) {
     console.log(`Now ${checked ? 'showing' : 'hiding'} ${theatreID}`);
+    // let data: TheatresData = filterDataByTheatre(['amc-lennox-town-center-24']);
+    // loadData(data);
 }
 /**
  * Filter the movies based on when their showtime begins.

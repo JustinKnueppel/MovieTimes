@@ -1,3 +1,10 @@
+interface Theatre {
+    id: string,
+    name: string
+}
+
+const AMCtheatres: Array<Theatre> = [{id: 'amc-lennox-town-center-24', name: 'AMC Lennox'}, {id: 'amc-dublin-village-18', name: 'AMC Dublin Village'}, {id: 'amc-columbus-10', name: 'AMC Hilliard'}];
+
 interface MovieInfo {
     title: string,
     link: string,
@@ -120,7 +127,7 @@ function loadShowtimes(showtimes: Showtime[]) {
 /**
  * Load in showtimes in chronological order.
  */
-function main() {
+function loadData(theatres: Array<Theatre>, startTime: Date, endTime: Date) {
     let data: MovieInfo[] =  getData('');
 
     let showtimes = getShowtimes('AMC Columbus', data).sort((s1, s2) => {
@@ -134,5 +141,15 @@ function main() {
  * Once DOM has loaded, load in data.
  */
 window.onload = () => {
-    main();
+    let startTime = new Date();
+    startTime.setHours(0);
+    startTime.setMinutes(0);
+    startTime.setMilliseconds(0);
+
+    let endTime = new Date();
+    endTime.setHours(23);
+    endTime.setMinutes(59);
+    endTime.setMilliseconds(0);
+
+    loadData(AMCtheatres, startTime, endTime);
 }

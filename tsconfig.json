@@ -7,6 +7,7 @@
                 "Backend/app/amcMovies.ts",
                 "Backend/app/db.ts", 
                 "Frontend/scripts/main.ts",
-                "Frontend/scripts/loaddata.ts"
+                "Frontend/scripts/loaddata.ts",
+                "Frontend/scripts/control.ts"
             ]
 }

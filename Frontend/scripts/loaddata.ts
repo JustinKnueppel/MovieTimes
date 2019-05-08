@@ -165,7 +165,14 @@ function filterDataByTheatre(theatreIDs: string[]/*, startTime: Date, endTime: D
  * Load in showtimes in chronological order.
  */
 function loadData(theatresData: TheatresData) {
+    // Remove old data
+    let table = document.getElementById('movie-table');
 
+    for (let tr of document.querySelectorAll('#movie-table > tr:not([table-headers])')) {
+        table.removeChild(tr);
+    }
+    
+    // Load new data
     let showtimes: Showtime[] = [];
 
     for (let theatre of AMCtheatres) {

@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
         "target": "esnext",
-        "typesRoots": ["./node_modules/@types"],
         "watch": true
     },
     "files": [  "Backend/server.ts", 
                 "Backend/app/amcMovies.ts",
                 "Backend/app/db.ts", 
-                "Frontent/scripts/main.ts"
+                "Frontend/scripts/main.ts",
+                "Frontend/scripts/loaddata.ts"
             ]
 }

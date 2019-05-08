@@ -1,15 +1,13 @@
-"use strict";
-exports.__esModule = true;
-var fs = require('fs');
-var path = require('path');
-var db = {
+const fs = require('fs');
+const path = require('path');
+let db = {
     /**
      * Check if the database contains the theatre information for the given day.
      * @param theatre AMC unique theatre name.
      * @param date yyyy-mm-dd date.
      */
     contains: function (theatre, date) {
-        var filePath = path.join(__dirname, 'data', date, theatre + ".json");
+        let filePath = path.join(__dirname, 'data', date, `${theatre}.json`);
         return fs.existsSync(filePath);
     },
     /**
@@ -18,7 +16,7 @@ var db = {
      * @param date yyyy-mm-dd date.
      */
     get: function (theatre, date) {
-        var filePath = path.join(__dirname, 'data', date, theatre + ".json");
+        let filePath = path.join(__dirname, 'data', date, `${theatre}.json`);
         return JSON.parse(fs.readFileSync(filePath));
     },
     /**
@@ -29,12 +27,12 @@ var db = {
      */
     post: function (theatre, date, data) {
         try {
-            var folderPath = path.join(__dirname, 'data', date);
+            let folderPath = path.join(__dirname, 'data', date);
             if (!fs.existsSync(folderPath)) {
                 fs.mkdirSync(folderPath);
             }
-            var filePath = path.join(__dirname, 'data', date, theatre + ".json");
-            var json = JSON.stringify(data);
+            let filePath = path.join(__dirname, 'data', date, `${theatre}.json`);
+            let json = JSON.stringify(data);
             fs.writeFileSync(filePath, json);
             return true;
         }
@@ -43,4 +41,4 @@ var db = {
         }
     }
 };
-exports["default"] = db;
+export default db;

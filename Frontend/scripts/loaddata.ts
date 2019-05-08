@@ -21,11 +21,11 @@ interface Showtime {
     sortTime: number
 }
 
-export interface TheatresData {
+interface TheatresData {
     [theatre: string]: MovieInfo[]
 }
 
-export let AMCtheatres: Array<Theatre> = [{id: 'amc-lennox-town-center-24', name: 'AMC Lennox'}, {id: 'amc-dublin-village-18', name: 'AMC Dublin Village'}, {id: 'amc-columbus-10', name: 'AMC Hilliard'}];
+let AMCtheatres: Array<Theatre> = [{id: 'amc-lennox-town-center-24', name: 'AMC Lennox'}, {id: 'amc-dublin-village-18', name: 'AMC Dublin Village'}, {id: 'amc-columbus-10', name: 'AMC Hilliard'}];
 
 /**
  * Return the theatre info for the given theatre and date.
@@ -150,7 +150,7 @@ const ALL_DATA: TheatresData = getData();
 /*
  * Filter all data by given constraints.
  */
-export function filterDataByTheatre(theatreIDs: string[]/*, startTime: Date, endTime: Date*/): TheatresData {
+function filterDataByTheatre(theatreIDs: string[]/*, startTime: Date, endTime: Date*/): TheatresData {
     let filterData = ALL_DATA;
 
     for (let theatre of Object.keys(filterData)) {
@@ -164,7 +164,7 @@ export function filterDataByTheatre(theatreIDs: string[]/*, startTime: Date, end
 /**
  * Load in showtimes in chronological order.
  */
-export function loadData(theatresData: TheatresData) {
+function loadData(theatresData: TheatresData) {
 
     let showtimes: Showtime[] = [];
 

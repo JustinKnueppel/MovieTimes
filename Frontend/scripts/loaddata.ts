@@ -270,9 +270,16 @@ function filterData(theatreIDs: string[], startTime: Date, endTime: Date): Theat
     let filterData: TheatresData = {};
 
     for (let theatre of Object.keys(ALL_DATA)) {
+        // Filter for theatre
         if (theatreIDs.indexOf(theatre) >= 0) {
-            // TODO: Filter on times as well
             filterData[theatre] = ALL_DATA[theatre];
+            // Filter for time
+            for (let movie of filterData[theatre]) {
+                movie.times = movie.times.filter((timeObj) => {
+                    let time: Date = timeToDate(timeObj.time);
+                    return time >= startTime && time <= endTime;
+                })
+            }
         }
     }
 

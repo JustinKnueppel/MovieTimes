@@ -27,9 +27,15 @@ interface TheatresData {
 
 type DateFormat = string | number;
 
+type ampm = 'am' | 'pm';
+
 
 let AMCtheatres: Array<Theatre> = [{id: 'amc-lennox-town-center-24', name: 'AMC Lennox'}, {id: 'amc-dublin-village-18', name: 'AMC Dublin Village'}, {id: 'amc-columbus-10', name: 'AMC Hilliard'}];
 
+/**
+ * Format a date object into a yyyy-mm-dd date string.
+ * @param date Date to be formatted.
+ */
 function formatDate(date: Date): DateFormat {
     let dd: DateFormat = date.getDate();
     dd = dd >= 10 ? dd : `0${dd}`
@@ -64,27 +70,24 @@ function loadTheatreOptions() {
 /**
  * Return the current hour in 12 hour format along with an am/pm indicator.
  */
-function getCurrentHour() {
+function getCurrentHour(): [number, ampm] {
     let date = new Date();
-    let hour = date.getHours() + 1;
+    let hour = date.getHours();
 
-    let ispm = false;
-    if (hour >= 12 && hour < 24) {
-        ispm = true;
-    }
+    let ampm: ampm = hour <= 11 ? 'am' : 'pm';
 
     if (hour > 12) {
         hour -= 12;
     }
 
-    return [hour, ispm];
+    return [hour, ampm];
 }
 
 /**
  * Display time filtering options.
  */
 function loadTimeOptions() {
-    let [currentHour, ispm] = getCurrentHour();
+    let [currentHour, ampm] = getCurrentHour();
 
     // Generate values for the start times.
     let startHours = document.querySelector('#time-start select[name="hours"]');
@@ -108,9 +111,7 @@ function loadTimeOptions() {
         startMinutes.appendChild(minute);
     }
 
-    if (ispm) {
-        document.querySelector('#time-start select[name="ampm"] option[value="pm"]').setAttribute('selected', 'selected');
-    }
+    document.querySelector(`#time-start select[name="ampm"] option[value="${ampm}"]`).setAttribute('selected', 'selected');
 
     // Generate values for the end times.
     let endHours = document.querySelector('#time-end select[name="hours"]');
@@ -153,8 +154,7 @@ function getTheatreInfo(date: Date, theatre: string): Array<MovieInfo> {
     return theatreinfo[theatre];
 }
 /**
- * Retrieve the stored JSON for the given theatre.
- * @param theatre Unique name for the theatre.
+ * Retrieve the stored JSON for all theatres for today.
  */
 function getData(): TheatresData {
     let data: TheatresData = {};
@@ -215,7 +215,7 @@ function getShowtimes(theatre: string, theatreInfo: MovieInfo[]): Showtime[] {
 }
 
 /**
- * Return a DOM object representing the showtime.
+ * Load a row into the movie table representing the showtime.
  * @param showtime Showtime information.
  */
 function loadShowtime(showtime: Showtime): HTMLElement {
@@ -267,11 +267,12 @@ const ALL_DATA: TheatresData = getData();
  * Filter all data by given constraints.
  */
 function filterData(theatreIDs: string[], startTime: Date, endTime: Date): TheatresData {
-    let filterData = ALL_DATA;
+    let filterData: TheatresData = {};
 
-    for (let theatre of Object.keys(filterData)) {
-        if (theatreIDs.indexOf(theatre) < 0) {
-            delete filterData[theatre];
+    for (let theatre of Object.keys(ALL_DATA)) {
+        if (theatreIDs.indexOf(theatre) >= 0) {
+            // TODO: Filter on times as well
+            filterData[theatre] = ALL_DATA[theatre];
         }
     }
 
@@ -297,7 +298,6 @@ function loadData(theatresData: TheatresData) {
         }
     }
 
-
     loadShowtimes(showtimes.sort((s1, s2) => {
         return s1.sortTime - s2.sortTime;
     }));
@@ -307,18 +307,9 @@ function loadData(theatresData: TheatresData) {
  * Once DOM has loaded, load in data.
  */
 window.onload = () => {
+    // Populate filter options.
     loadTheatreOptions();
     loadTimeOptions();
-
-    let startTime = new Date();
-    startTime.setHours(0);
-    startTime.setMinutes(0);
-    startTime.setMilliseconds(0);
-
-    let endTime = new Date();
-    endTime.setHours(23);
-    endTime.setMinutes(59);
-    endTime.setMilliseconds(0);
 
     loadData(ALL_DATA);
 }

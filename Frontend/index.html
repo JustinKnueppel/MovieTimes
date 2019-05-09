@@ -17,13 +17,41 @@
         </nav>
         <div id="main-container" class="container">
             <div id="options">
-                <ul id="option-types">
-                    <li><button class="filter-option" type="button" name="theatres">Theatres</button></li>
-                    <li><button class="filter-option" type="button" name="time">Times</button></li>
-                </ul>
-                <div id="option-space">
-                    
+                <div id="theatre-options">
+                    <ul>
+                        
+                    </ul>
                 </div>
+                <div id="time-options">
+                    <span class="note">Please enter the time constraints</span>
+                    <div id="time-start">
+                        <select name="hours">
+
+                        </select>
+                        <span> : </span>
+                        <select name="minutes">
+
+                        </select>
+                        <select name="ampm">
+                            <option value="am">am</option>
+                            <option value="pm">pm</option>
+                        </select>
+                    </div>
+                    <div id="time-end">
+                        <select name="hours">
+
+                            </select>
+                            <span> : </span>
+                            <select name="minutes">
+    
+                            </select>
+                            <select name="ampm">
+                                <option value="am">am</option>
+                                <option value="pm" selected="selected">pm</option>
+                            </select>
+                    </div>
+                </div>
+                <button id="submit-filter" class="submit-btn" type="button">filter</button>
             </div>
             <table id="movie-table">
                 <tr class="table-headers">

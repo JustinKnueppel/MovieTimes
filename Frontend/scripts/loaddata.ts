@@ -40,6 +40,105 @@ function formatDate(date: Date): DateFormat {
 }
 
 /**
+ * Display theatre options to the user.
+ */
+function loadTheatreOptions() {
+    let options = document.querySelector('#theatre-options ul');
+
+    for (let theatre of AMCtheatres) {
+        let li = document.createElement('li');
+
+        let node = document.createElement('input');
+        node.setAttribute('type', 'checkbox');
+        node.setAttribute('value', theatre['id']);
+        node.setAttribute('name', theatre['name']);
+        node.checked = true;
+
+        li.appendChild(node);
+
+        options.appendChild(li);
+        options.append(theatre['name']);
+    }
+}
+
+/**
+ * Return the current hour in 12 hour format along with an am/pm indicator.
+ */
+function getCurrentHour() {
+    let date = new Date();
+    let hour = date.getHours() + 1;
+
+    let ispm = false;
+    if (hour >= 12 && hour < 24) {
+        ispm = true;
+    }
+
+    if (hour > 12) {
+        hour -= 12;
+    }
+
+    return [hour, ispm];
+}
+
+/**
+ * Display time filtering options.
+ */
+function loadTimeOptions() {
+    let [currentHour, ispm] = getCurrentHour();
+
+    // Generate values for the start times.
+    let startHours = document.querySelector('#time-start select[name="hours"]');
+
+    for (let i = 1; i <= 12; i++) {
+        let hour = document.createElement('option');
+        hour.setAttribute('value', i.toString());
+        if (i === currentHour) {
+            hour.setAttribute('selected', 'selected');
+        }
+        hour.innerText = i.toString();
+        startHours.appendChild(hour);
+    }
+
+    let startMinutes = document.querySelector('#time-start select[name="minutes"]');
+
+    for (let i of [0, 15, 30, 45, 59]) {
+        let minute = document.createElement('option');
+        minute.setAttribute('value', i.toString());
+        minute.innerText = i.toString();
+        startMinutes.appendChild(minute);
+    }
+
+    if (ispm) {
+        document.querySelector('#time-start select[name="ampm"] option[value="pm"]').setAttribute('selected', 'selected');
+    }
+
+    // Generate values for the end times.
+    let endHours = document.querySelector('#time-end select[name="hours"]');
+
+    for (let i = 1; i <= 12; i++) {
+        let hour = document.createElement('option');
+        hour.setAttribute('value', i.toString());
+        if (i === 11) {
+            hour.setAttribute('selected', 'selected');
+        }
+        hour.innerText = i.toString();
+        endHours.appendChild(hour);
+    }
+
+    let endMinutes = document.querySelector('#time-end select[name="minutes"]'); 
+
+    for (let i of [0, 15, 30, 45, 59]) {
+        let minute = document.createElement('option');
+        minute.setAttribute('value', i.toString());
+        if (i === 59) {
+            minute.setAttribute('selected', 'selected');
+        }
+        minute.innerText = i.toString();
+        endMinutes.appendChild(minute);
+    }
+}
+
+/**
  * Return the theatre info for the given theatre and date.
  * @param date Date of movie info to get.
  * @param theatre Unique name for theatre.
@@ -167,7 +266,7 @@ const ALL_DATA: TheatresData = getData();
 /*
  * Filter all data by given constraints.
  */
-function filterDataByTheatre(theatreIDs: string[]/*, startTime: Date, endTime: Date*/): TheatresData {
+function filterData(theatreIDs: string[], startTime: Date, endTime: Date): TheatresData {
     let filterData = ALL_DATA;
 
     for (let theatre of Object.keys(filterData)) {
@@ -208,6 +307,9 @@ function loadData(theatresData: TheatresData) {
  * Once DOM has loaded, load in data.
  */
 window.onload = () => {
+    loadTheatreOptions();
+    loadTimeOptions();
+
     let startTime = new Date();
     startTime.setHours(0);
     startTime.setMinutes(0);

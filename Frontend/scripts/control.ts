@@ -1,12 +1,18 @@
 interface HTMLOptions {
-    id?: string,
+    id?: string;
 }
 
 function getCheckedTheatres(): string[] {
     let checkedTheatres: string[] = [];
 
     for (let theatre of AMCtheatres) {
-        if ((<HTMLInputElement>document.querySelector(`#theatre-options input[name="${theatre.name}"]`)).checked) {
+        if (
+            (<HTMLInputElement>(
+                document.querySelector(
+                    `#theatre-options input[name="${theatre.name}"]`
+                )
+            )).checked
+        ) {
             checkedTheatres.push(theatre.id);
         }
     }
@@ -19,17 +25,23 @@ function getCheckedTheatres(): string[] {
  * @param timeElem div containing the time selectors.
  */
 function parseTimeInput(timeElem: HTMLElement): Date {
-    let hourDD: HTMLSelectElement = timeElem.querySelector('select[name="hours"]');
+    let hourDD: HTMLSelectElement = timeElem.querySelector(
+        'select[name="hours"]'
+    );
     let hour = parseInt(hourDD.options[hourDD.selectedIndex].value);
 
-    let ampmDD: HTMLSelectElement = timeElem.querySelector('select[name="ampm"]');
+    let ampmDD: HTMLSelectElement = timeElem.querySelector(
+        'select[name="ampm"]'
+    );
     let ampm = ampmDD.options[ampmDD.selectedIndex].value;
 
     if (ampm === 'pm') {
         hour += 12;
     }
 
-    let minuteDD: HTMLSelectElement = timeElem.querySelector('select[name="minutes"]');
+    let minuteDD: HTMLSelectElement = timeElem.querySelector(
+        'select[name="minutes"]'
+    );
     let minute = parseInt(minuteDD.options[minuteDD.selectedIndex].value);
 
     let time = new Date();
@@ -49,8 +61,8 @@ function getTimeConstraints() {
 
     let startTime = parseTimeInput(timeStartElem);
     let endTime = parseTimeInput(timeEndElem);
-    
-    return {start: startTime, end: endTime};
+
+    return { start: startTime, end: endTime };
 }
 
 // Control elements of page
@@ -66,7 +78,7 @@ document.addEventListener('click', function(event) {
     /*
      * Deal with filtering.
      */
-    if(event.target.matches('#submit-filter')) {
+    if (event.target.matches('#submit-filter')) {
         let checkedTheatres: string[] = getCheckedTheatres();
         let times = getTimeConstraints();
         let data = filterData(checkedTheatres, times.start, times.end);

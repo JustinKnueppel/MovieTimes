@@ -1,36 +1,39 @@
 interface Theatre {
-    id: string,
-    name: string
+    id: string;
+    name: string;
 }
 
 interface MovieInfo {
-    title: string,
-    link: string,
+    title: string;
+    link: string;
     times: Array<{
         time: string;
         link: string;
-    }>
+    }>;
 }
 
 interface Showtime {
-    title: string,
-    movieLink: string,
-    showtime: string,
-    showtimeLink: string,
-    theatre: string,
-    sortTime: number
+    title: string;
+    movieLink: string;
+    showtime: string;
+    showtimeLink: string;
+    theatre: string;
+    sortTime: number;
 }
 
 interface TheatresData {
-    [theatre: string]: MovieInfo[]
+    [theatre: string]: MovieInfo[];
 }
 
 type DateFormat = string | number;
 
 type ampm = 'am' | 'pm';
 
-
-let AMCtheatres: Array<Theatre> = [{id: 'amc-lennox-town-center-24', name: 'AMC Lennox'}, {id: 'amc-dublin-village-18', name: 'AMC Dublin Village'}, {id: 'amc-columbus-10', name: 'AMC Hilliard'}];
+let AMCtheatres: Array<Theatre> = [
+    { id: 'amc-lennox-town-center-24', name: 'AMC Lennox' },
+    { id: 'amc-dublin-village-18', name: 'AMC Dublin Village' },
+    { id: 'amc-columbus-10', name: 'AMC Hilliard' }
+];
 
 /**
  * Format a date object into a yyyy-mm-dd date string.
@@ -38,11 +41,11 @@ let AMCtheatres: Array<Theatre> = [{id: 'amc-lennox-town-center-24', name: 'AMC 
  */
 function formatDate(date: Date): DateFormat {
     let dd: DateFormat = date.getDate();
-    dd = dd >= 10 ? dd : `0${dd}`
+    dd = dd >= 10 ? dd : `0${dd}`;
     let mm: DateFormat = date.getMonth() + 1;
-    mm = mm >= 10 ? mm : `0${mm}`
+    mm = mm >= 10 ? mm : `0${mm}`;
     let yyyy: DateFormat = date.getFullYear();
-    return `${yyyy}-${mm}-${dd}`
+    return `${yyyy}-${mm}-${dd}`;
 }
 
 /**
@@ -102,7 +105,9 @@ function loadTimeOptions() {
         startHours.appendChild(hour);
     }
 
-    let startMinutes = document.querySelector('#time-start select[name="minutes"]');
+    let startMinutes = document.querySelector(
+        '#time-start select[name="minutes"]'
+    );
 
     for (let i of [0, 15, 30, 45, 59]) {
         let minute = document.createElement('option');
@@ -111,7 +116,11 @@ function loadTimeOptions() {
         startMinutes.appendChild(minute);
     }
 
-    document.querySelector(`#time-start select[name="ampm"] option[value="${ampm}"]`).setAttribute('selected', 'selected');
+    document
+        .querySelector(
+            `#time-start select[name="ampm"] option[value="${ampm}"]`
+        )
+        .setAttribute('selected', 'selected');
 
     // Generate values for the end times.
     let endHours = document.querySelector('#time-end select[name="hours"]');
@@ -126,7 +135,7 @@ function loadTimeOptions() {
         endHours.appendChild(hour);
     }
 
-    let endMinutes = document.querySelector('#time-end select[name="minutes"]'); 
+    let endMinutes = document.querySelector('#time-end select[name="minutes"]');
 
     for (let i of [0, 15, 30, 45, 59]) {
         let minute = document.createElement('option');
@@ -226,8 +235,8 @@ function loadShowtime(showtime: Showtime): HTMLElement {
     time.setAttribute('href', showtime.showtimeLink);
     time.innerText = showtime.showtime;
     td.appendChild(time);
-    tr.appendChild(td)
-    
+    tr.appendChild(td);
+
     td = document.createElement('td');
     let movie = document.createElement('a');
     movie.setAttribute('href', showtime.movieLink);
@@ -266,7 +275,11 @@ const ALL_DATA: TheatresData = getData();
 /*
  * Filter all data by given constraints.
  */
-function filterData(theatreIDs: string[], startTime: Date, endTime: Date): TheatresData {
+function filterData(
+    theatreIDs: string[],
+    startTime: Date,
+    endTime: Date
+): TheatresData {
     let filterData: TheatresData = {};
 
     for (let theatre of Object.keys(ALL_DATA)) {
@@ -275,10 +288,10 @@ function filterData(theatreIDs: string[], startTime: Date, endTime: Date): Theat
             filterData[theatre] = ALL_DATA[theatre];
             // Filter for time
             for (let movie of filterData[theatre]) {
-                movie.times = movie.times.filter((timeObj) => {
+                movie.times = movie.times.filter(timeObj => {
                     let time: Date = timeToDate(timeObj.time);
                     return time >= startTime && time <= endTime;
-                })
+                });
             }
         }
     }
@@ -292,22 +305,28 @@ function loadData(theatresData: TheatresData) {
     // Remove old data
     let table = document.getElementById('movie-table');
 
-    for (let tr of document.querySelectorAll('#movie-table > tr:not([table-headers])')) {
+    for (let tr of document.querySelectorAll(
+        '#movie-table > tr:not([table-headers])'
+    )) {
         table.removeChild(tr);
     }
-    
+
     // Load new data
     let showtimes: Showtime[] = [];
 
     for (let theatre of AMCtheatres) {
         if (theatresData[theatre.id]) {
-            showtimes.push(...getShowtimes(theatre.name, theatresData[theatre.id]));
+            showtimes.push(
+                ...getShowtimes(theatre.name, theatresData[theatre.id])
+            );
         }
     }
 
-    loadShowtimes(showtimes.sort((s1, s2) => {
-        return s1.sortTime - s2.sortTime;
-    }));
+    loadShowtimes(
+        showtimes.sort((s1, s2) => {
+            return s1.sortTime - s2.sortTime;
+        })
+    );
 }
 
 /**
@@ -319,4 +338,4 @@ window.onload = () => {
     loadTimeOptions();
 
     loadData(ALL_DATA);
-}
+};

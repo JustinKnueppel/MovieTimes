@@ -5,6 +5,7 @@
         "outFile": "scripts/script.js"
     },
     "files": [  
+                "scripts/temp.ts",
                 "scripts/loaddata.ts",
                 "scripts/control.ts"
             ]

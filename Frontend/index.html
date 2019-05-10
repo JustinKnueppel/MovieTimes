@@ -9,20 +9,21 @@
         <!-- <script src="scripts/main.js" type="text/javascript"></script> -->
     </head>
     <body>
-        <nav>
-            <ul>
-                <a href="#">Home</a>
-            </ul>
-        </nav>
         <div id="main-container" class="container">
+            <nav>
+                <ul>
+                    <a href="#">Home</a>
+                </ul>
+            </nav>
             <div id="options">
                 <div id="theatre-options">
-                    <span class="note">Choose theatres</span>
+                    <span class="option-title">Filter theatres</span>
                     <ul></ul>
                 </div>
                 <div id="time-options">
+                    <span class="option-title">Filter times</span>
                     <div id="time-start" class="time-filter">
-                        <span class="note">Earliest showtime: </span>
+                        <span class="note">Earliest showtime</span>
                         <div class="time-input">
                             <select name="hours"> </select>
                             <span> : </span>
@@ -34,7 +35,7 @@
                         </div>
                     </div>
                     <div id="time-end" class="time-filter">
-                        <span class="note">Latest showtime: </span>
+                        <span class="note">Latest showtime</span>
                         <div class="time-input">
                             <select name="hours"> </select>
                             <span> : </span>
@@ -49,7 +50,7 @@
                     </div>
                 </div>
                 <button id="submit-filter" class="submit-btn" type="button">
-                    filter
+                    Filter
                 </button>
             </div>
             <table id="movie-table">

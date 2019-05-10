@@ -1,7 +1,7 @@
 let AMCtheatres = [
-    { id: 'amc-lennox-town-center-24', name: 'AMC Lennox' },
-    { id: 'amc-dublin-village-18', name: 'AMC Dublin Village' },
-    { id: 'amc-columbus-10', name: 'AMC Hilliard' }
+    { id: 'amc-lennox-town-center-24', name: 'AMC Lennox', link: 'https://www.amctheatres.com/movie-theatres/amc-lennox-town-center-24' },
+    { id: 'amc-dublin-village-18', name: 'AMC Dublin Village', link: 'https://www.amctheatres.com/movie-theatres/amc-dublin-village-18' },
+    { id: 'amc-columbus-10', name: 'AMC Hilliard', link: 'https://www.amctheatres.com/movie-theatres/amc-columbus-10' }
 ];
 /**
  * Format a date object into a yyyy-mm-dd date string.
@@ -154,7 +154,8 @@ function getShowtimes(theatre, theatreInfo) {
                 movieLink: movie.link,
                 showtime: showtime.time,
                 showtimeLink: showtime.link,
-                theatre: theatre,
+                theatre: theatre.name,
+                theatreLink: theatre.link,
                 sortTime: timeToDate(showtime.time).getTime()
             });
         }
@@ -181,8 +182,7 @@ function loadShowtime(showtime) {
     tr.appendChild(td);
     td = document.createElement('td');
     let theatre = document.createElement('a');
-    //TODO: Add theatre links
-    theatre.setAttribute('href', '#');
+    theatre.setAttribute('href', showtime.theatreLink);
     theatre.innerText = showtime.theatre;
     td.appendChild(theatre);
     tr.appendChild(td);
@@ -235,7 +235,7 @@ function loadData(theatresData) {
     let showtimes = [];
     for (let theatre of AMCtheatres) {
         if (theatresData[theatre.id]) {
-            showtimes.push(...getShowtimes(theatre.name, theatresData[theatre.id]));
+            showtimes.push(...getShowtimes(theatre, theatresData[theatre.id]));
         }
     }
     loadShowtimes(showtimes.sort((s1, s2) => {

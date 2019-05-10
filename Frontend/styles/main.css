@@ -127,23 +127,22 @@ table {
 
 /* End reset */
 
+a {
+    text-decoration: none;
+    display: inline-block;
+    background-color: inherit;
+    color: black;
+}
 nav {
     display: flexbox;
     background-color: black;
-    color: #71100f;
     height: 3em;
     margin-bottom: 10px;
 }
 nav a {
-    background-color: inherit;
-    color: inherit;
+    color: white;
     font-size: 2em;
     vertical-align: middle;
-}
-
-nav a {
-    text-decoration: none;
-    display: inline-block;
     padding: 10px;
 }
 
@@ -159,11 +158,31 @@ nav a {
     border: 1px solid black;
     margin: 15px;
 }
-#movie-table th,
-#movie-table td {
-    border: 1px solid black;
+
+th,
+td {
+    /* border: 1px solid black; */
     margin: 15px;
     padding: 15px;
+}
+
+th {
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+
+
+
+tr:nth-child(odd) td {
+    background: lightgray;
+}
+tr:nth-child(even) td {
+    background: white;
+}
+th:first-child,
+td:first-child {
+    text-align: right;
 }
 
 #options {

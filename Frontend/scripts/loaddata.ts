@@ -1,6 +1,7 @@
 interface Theatre {
     id: string;
     name: string;
+    link: string;
 }
 
 interface MovieInfo {
@@ -18,6 +19,7 @@ interface Showtime {
     showtime: string;
     showtimeLink: string;
     theatre: string;
+    theatreLink: string;
     sortTime: number;
 }
 
@@ -30,9 +32,9 @@ type DateFormat = string | number;
 type ampm = 'am' | 'pm';
 
 let AMCtheatres: Array<Theatre> = [
-    { id: 'amc-lennox-town-center-24', name: 'AMC Lennox' },
-    { id: 'amc-dublin-village-18', name: 'AMC Dublin Village' },
-    { id: 'amc-columbus-10', name: 'AMC Hilliard' }
+    { id: 'amc-lennox-town-center-24', name: 'AMC Lennox', link: 'https://www.amctheatres.com/movie-theatres/amc-lennox-town-center-24' },
+    { id: 'amc-dublin-village-18', name: 'AMC Dublin Village', link: 'https://www.amctheatres.com/movie-theatres/amc-dublin-village-18' },
+    { id: 'amc-columbus-10', name: 'AMC Hilliard', link: 'https://www.amctheatres.com/movie-theatres/amc-columbus-10' }
 ];
 
 /**
@@ -209,7 +211,7 @@ function timeToDate(time: string): Date {
  * @param theatre Unique theatre name.
  * @param theatreInfo Information about movie showtimes at a given theatre.
  */
-function getShowtimes(theatre: string, theatreInfo: MovieInfo[]): Showtime[] {
+function getShowtimes(theatre: Theatre, theatreInfo: MovieInfo[]): Showtime[] {
     let showtimes: Showtime[] = [];
 
     for (let movie of theatreInfo) {
@@ -219,7 +221,8 @@ function getShowtimes(theatre: string, theatreInfo: MovieInfo[]): Showtime[] {
                 movieLink: movie.link,
                 showtime: showtime.time,
                 showtimeLink: showtime.link,
-                theatre: theatre,
+                theatre: theatre.name,
+                theatreLink: theatre.link,
                 sortTime: timeToDate(showtime.time).getTime()
             });
         }
@@ -251,8 +254,7 @@ function loadShowtime(showtime: Showtime): HTMLElement {
 
     td = document.createElement('td');
     let theatre = document.createElement('a');
-    //TODO: Add theatre links
-    theatre.setAttribute('href', '#');
+    theatre.setAttribute('href', showtime.theatreLink);
     theatre.innerText = showtime.theatre;
     td.appendChild(theatre);
     tr.appendChild(td);
@@ -322,7 +324,7 @@ function loadData(theatresData: TheatresData) {
     for (let theatre of AMCtheatres) {
         if (theatresData[theatre.id]) {
             showtimes.push(
-                ...getShowtimes(theatre.name, theatresData[theatre.id])
+                ...getShowtimes(theatre, theatresData[theatre.id])
             );
         }
     }

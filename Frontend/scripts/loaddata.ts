@@ -65,8 +65,9 @@ function loadTheatreOptions() {
 
         li.appendChild(node);
 
+        li.append(theatre['name']);
+
         options.appendChild(li);
-        options.append(theatre['name']);
     }
 }
 
@@ -93,7 +94,9 @@ function loadTimeOptions() {
     let [currentHour, ampm] = getCurrentHour();
 
     // Generate values for the start times.
-    let startHours = document.querySelector('#time-start select[name="hours"]');
+    let startTime = document.getElementById('time-start');
+
+    let startHours = startTime.querySelector('select[name="hours"]');
 
     for (let i = 1; i <= 12; i++) {
         let hour = document.createElement('option');
@@ -105,8 +108,8 @@ function loadTimeOptions() {
         startHours.appendChild(hour);
     }
 
-    let startMinutes = document.querySelector(
-        '#time-start select[name="minutes"]'
+    let startMinutes = startTime.querySelector(
+        'select[name="minutes"]'
     );
 
     for (let i of [0, 15, 30, 45, 59]) {
@@ -116,14 +119,16 @@ function loadTimeOptions() {
         startMinutes.appendChild(minute);
     }
 
-    document
+    startTime
         .querySelector(
-            `#time-start select[name="ampm"] option[value="${ampm}"]`
+            `select[name="ampm"] option[value="${ampm}"]`
         )
         .setAttribute('selected', 'selected');
 
     // Generate values for the end times.
-    let endHours = document.querySelector('#time-end select[name="hours"]');
+    let endTime = document.getElementById('time-end');
+
+    let endHours = endTime.querySelector('select[name="hours"]');
 
     for (let i = 1; i <= 12; i++) {
         let hour = document.createElement('option');
@@ -135,7 +140,7 @@ function loadTimeOptions() {
         endHours.appendChild(hour);
     }
 
-    let endMinutes = document.querySelector('#time-end select[name="minutes"]');
+    let endMinutes = endTime.querySelector('select[name="minutes"]');
 
     for (let i of [0, 15, 30, 45, 59]) {
         let minute = document.createElement('option');

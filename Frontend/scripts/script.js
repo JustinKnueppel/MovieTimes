@@ -1,4 +1,8 @@
-let AMCtheatres = [{ id: 'amc-lennox-town-center-24', name: 'AMC Lennox' }, { id: 'amc-dublin-village-18', name: 'AMC Dublin Village' }, { id: 'amc-columbus-10', name: 'AMC Hilliard' }];
+let AMCtheatres = [
+    { id: 'amc-lennox-town-center-24', name: 'AMC Lennox' },
+    { id: 'amc-dublin-village-18', name: 'AMC Dublin Village' },
+    { id: 'amc-columbus-10', name: 'AMC Hilliard' }
+];
 /**
  * Format a date object into a yyyy-mm-dd date string.
  * @param date Date to be formatted.
@@ -24,8 +28,8 @@ function loadTheatreOptions() {
         node.setAttribute('name', theatre['name']);
         node.checked = true;
         li.appendChild(node);
+        li.append(theatre['name']);
         options.appendChild(li);
-        options.append(theatre['name']);
     }
 }
 /**
@@ -46,7 +50,8 @@ function getCurrentHour() {
 function loadTimeOptions() {
     let [currentHour, ampm] = getCurrentHour();
     // Generate values for the start times.
-    let startHours = document.querySelector('#time-start select[name="hours"]');
+    let startTime = document.getElementById('time-start');
+    let startHours = startTime.querySelector('select[name="hours"]');
     for (let i = 1; i <= 12; i++) {
         let hour = document.createElement('option');
         hour.setAttribute('value', i.toString());
@@ -56,16 +61,19 @@ function loadTimeOptions() {
         hour.innerText = i.toString();
         startHours.appendChild(hour);
     }
-    let startMinutes = document.querySelector('#time-start select[name="minutes"]');
+    let startMinutes = startTime.querySelector('select[name="minutes"]');
     for (let i of [0, 15, 30, 45, 59]) {
         let minute = document.createElement('option');
         minute.setAttribute('value', i.toString());
         minute.innerText = i.toString();
         startMinutes.appendChild(minute);
     }
-    document.querySelector(`#time-start select[name="ampm"] option[value="${ampm}"]`).setAttribute('selected', 'selected');
+    startTime
+        .querySelector(`select[name="ampm"] option[value="${ampm}"]`)
+        .setAttribute('selected', 'selected');
     // Generate values for the end times.
-    let endHours = document.querySelector('#time-end select[name="hours"]');
+    let endTime = document.getElementById('time-end');
+    let endHours = endTime.querySelector('select[name="hours"]');
     for (let i = 1; i <= 12; i++) {
         let hour = document.createElement('option');
         hour.setAttribute('value', i.toString());
@@ -75,7 +83,7 @@ function loadTimeOptions() {
         hour.innerText = i.toString();
         endHours.appendChild(hour);
     }
-    let endMinutes = document.querySelector('#time-end select[name="minutes"]');
+    let endMinutes = endTime.querySelector('select[name="minutes"]');
     for (let i of [0, 15, 30, 45, 59]) {
         let minute = document.createElement('option');
         minute.setAttribute('value', i.toString());
@@ -205,7 +213,7 @@ function filterData(theatreIDs, startTime, endTime) {
             filterData[theatre] = ALL_DATA[theatre];
             // Filter for time
             for (let movie of filterData[theatre]) {
-                movie.times = movie.times.filter((timeObj) => {
+                movie.times = movie.times.filter(timeObj => {
                     let time = timeToDate(timeObj.time);
                     return time >= startTime && time <= endTime;
                 });
@@ -246,7 +254,7 @@ window.onload = () => {
 function getCheckedTheatres() {
     let checkedTheatres = [];
     for (let theatre of AMCtheatres) {
-        if (document.querySelector(`#theatre-options input[name="${theatre.name}"]`).checked) {
+        if ((document.querySelector(`#theatre-options input[name="${theatre.name}"]`)).checked) {
             checkedTheatres.push(theatre.id);
         }
     }

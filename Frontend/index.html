@@ -2,12 +2,11 @@
 <html>
     <head>
         <title>Movie Times</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="styles/main.css" />
         <script src="scripts/script.js" type="module"></script>
 
         <!-- <script src="scripts/main.js" type="text/javascript"></script> -->
-
     </head>
     <body>
         <nav>
@@ -18,40 +17,40 @@
         <div id="main-container" class="container">
             <div id="options">
                 <div id="theatre-options">
-                    <ul>
-                        
-                    </ul>
+                    <span class="note">Choose theatres</span>
+                    <ul></ul>
                 </div>
                 <div id="time-options">
-                    <span class="note">Please enter the time constraints</span>
-                    <div id="time-start">
-                        <select name="hours">
-
-                        </select>
-                        <span> : </span>
-                        <select name="minutes">
-
-                        </select>
-                        <select name="ampm">
-                            <option value="am">am</option>
-                            <option value="pm">pm</option>
-                        </select>
-                    </div>
-                    <div id="time-end">
-                        <select name="hours">
-
-                            </select>
+                    <div id="time-start" class="time-filter">
+                        <span class="note">Earliest showtime: </span>
+                        <div class="time-input">
+                            <select name="hours"> </select>
                             <span> : </span>
-                            <select name="minutes">
-    
-                            </select>
+                            <select name="minutes"> </select>
                             <select name="ampm">
                                 <option value="am">am</option>
-                                <option value="pm" selected="selected">pm</option>
+                                <option value="pm">pm</option>
                             </select>
+                        </div>
+                    </div>
+                    <div id="time-end" class="time-filter">
+                        <span class="note">Latest showtime: </span>
+                        <div class="time-input">
+                            <select name="hours"> </select>
+                            <span> : </span>
+                            <select name="minutes"> </select>
+                            <select name="ampm">
+                                <option value="am">am</option>
+                                <option value="pm" selected="selected"
+                                    >pm</option
+                                >
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <button id="submit-filter" class="submit-btn" type="button">filter</button>
+                <button id="submit-filter" class="submit-btn" type="button">
+                    filter
+                </button>
             </div>
             <table id="movie-table">
                 <tr class="table-headers">
@@ -60,6 +59,12 @@
                     <th>Theatre</th>
                 </tr>
             </table>
+        </div>
+        <div class="footer">
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
     </body>
 </html>

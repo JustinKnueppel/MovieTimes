@@ -175,6 +175,7 @@ th {
     text-align: left;
     background-color: navy;
     color: white;
+    font-size: 1.5em;
 }
 
 tr:nth-child(odd) td {
@@ -248,6 +249,9 @@ td:first-child {
 #submit-filter {
     font-size: 2em;
     background: #73fbd3;
+    border: none;
+    font-family: inherit;
+    font-weight: normal;
 }
 
 .footer {

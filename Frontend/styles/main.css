@@ -198,8 +198,9 @@ td:first-child {
 }
 .option-title {
     justify-self: center;
-    font-size: 2em;
+    font-size: 1.5em;
     align-self: center;
+    margin: 5px;
 }
 #theatre-options {
     display: grid;
@@ -217,6 +218,13 @@ td:first-child {
 }
 #time-options span.option-title {
     grid-column: 1 / 3;
+}
+.time-input {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.time-input select {
+    display: inline-block;
 }
 .note {
     margin: 5px 1em;

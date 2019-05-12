@@ -41,6 +41,21 @@ var db = {
         catch (err) {
             return false;
         }
+    },
+    delete: function (date) {
+        try {
+            var folderPath_1 = path.join(__dirname, 'data', date);
+            if (fs.existsSync(folderPath_1)) {
+                fs.readdirSync(folderPath_1).forEach(function (file, index) {
+                    var curFile = path.join(folderPath_1, file);
+                    fs.unlinkSync(curFile);
+                });
+                fs.rmdirSync(folderPath_1);
+            }
+        }
+        catch (err) {
+            console.log("Failed to remove " + date + " folder");
+        }
     }
 };
 exports.default = db;

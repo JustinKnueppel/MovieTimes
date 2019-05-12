@@ -120,15 +120,6 @@ function getTheatre(theatreID, date) {
         });
     });
 }
-var _loop_1 = function (theatre) {
-    getMovieListings(theatre, '2019-05-12')
-        .then(function (movieListings) {
-        console.log("Retrieved data for " + theatre);
-    })
-        .catch(function (e) {
-        console.log('Error retrieving promise');
-    });
-};
 // Test API
 // getTheatre(377, '2019-05-01')
 //     .then((resp) => {
@@ -138,11 +129,16 @@ var _loop_1 = function (theatre) {
 //         console.log('Error occurred in amcMovies');
 //     });
 // Test database
-for (var _i = 0, _a = [
-    'amc-columbus-10',
-    'amc-dublin-village-18',
-    'amc-lennox-town-center-24'
-]; _i < _a.length; _i++) {
-    var theatre = _a[_i];
-    _loop_1(theatre);
-}
+// for (let theatre of [
+//     'amc-columbus-10',
+//     'amc-dublin-village-18',
+//     'amc-lennox-town-center-24'
+// ]) {
+//     getMovieListings(theatre, '2019-05-12')
+//         .then(movieListings => {
+//             console.log(`Retrieved data for ${theatre}`);
+//         })
+//         .catch(e => {
+//             console.log('Error retrieving promise');
+//         });
+// }

@@ -162,7 +162,7 @@ function loadTimeOptions() {
  */
 function getTheatreInfo(date: Date, theatre: string): Array<MovieInfo> {
     //TODO: Access backend to get real data
-        return theatreinfo[theatre];
+    return theatreinfo[theatre];
 }
 /**
  * Retrieve the stored JSON for all theatres for today.
@@ -287,7 +287,7 @@ function filterData(
     for (let theatre of Object.keys(ALL_DATA)) {
         // Filter for theatre
         if (theatreIDs.indexOf(theatre) >= 0) {
-            filterData[theatre] = ALL_DATA[theatre];
+            filterData[theatre] = JSON.parse(JSON.stringify(ALL_DATA[theatre]));
             // Filter for time
             for (let movie of filterData[theatre]) {
                 movie.times = movie.times.filter(timeObj => {

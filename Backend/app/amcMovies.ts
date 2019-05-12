@@ -98,9 +98,11 @@ async function getTheatre(theatreID: number, date: string)/*: Promise<Movie[]>*/
 
 
 // Test database
-// getMovieListings('amc-columbus-10', '2019-05-03').then((movieListings) => {
-//     console.log(JSON.stringify(movieListings));
-// })
-// .catch((e) => {
-//     console.log("Error retrieving promise");
-// });
+for (let theatre of ['amc-columbus-10', 'amc-dublin-village-18', 'amc-lennox-town-center-24']) {
+    getMovieListings(theatre, '2019-05-12').then((movieListings) => {
+        console.log(`Retrieved data for ${theatre}`);
+    })
+    .catch((e) => {
+        console.log("Error retrieving promise");
+    })
+};

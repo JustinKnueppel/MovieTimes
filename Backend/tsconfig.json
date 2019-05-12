@@ -1,10 +1,10 @@
 {
     "compilerOptions": {
-        "target": "esnext",
+        "target": "es5",
         "watch": true
     },
-    "files": [  "Backend/server.ts", 
-                "Backend/app/amcMovies.ts",
-                "Backend/app/db.ts"
+    "files": [  "server.ts", 
+                "app/amcMovies.ts",
+                "app/db.ts"
             ]
 }

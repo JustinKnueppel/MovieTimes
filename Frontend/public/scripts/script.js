@@ -1174,6 +1174,9 @@ let theatreinfo = {
         }
     ]
 };
+fetch('justinknueppel.ddns.net:8000/api/today').then((data) => {
+    console.log(data);
+});
 let AMCtheatres = [
     { id: 'amc-lennox-town-center-24', name: 'AMC Lennox', link: 'https://www.amctheatres.com/movie-theatres/amc-lennox-town-center-24' },
     { id: 'amc-dublin-village-18', name: 'AMC Dublin Village', link: 'https://www.amctheatres.com/movie-theatres/amc-dublin-village-18' },

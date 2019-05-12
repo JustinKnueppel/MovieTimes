@@ -1406,3 +1406,7 @@ let theatreinfo = {
         }
     ]
 };
+
+fetch('justinknueppel.ddns.net:8000/api/today').then((data) => {
+console.log(data);
+});

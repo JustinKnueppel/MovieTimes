@@ -37,10 +37,46 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var amcMovies_1 = require("./app/amcMovies");
+/**
+ * Format a date object into a yyyy-mm-dd date string.
+ * @param date Date to be formatted.
+ */
+function formatDate(date) {
+    var dd = date.getDate();
+    dd = dd >= 10 ? dd : "0" + dd;
+    var mm = date.getMonth() + 1;
+    mm = mm >= 10 ? mm : "0" + mm;
+    var yyyy = date.getFullYear();
+    return yyyy + "-" + mm + "-" + dd;
+}
+function getTheatresInfo(dateString) {
+    return __awaiter(this, void 0, void 0, function () {
+        var theatresInfo, promises, _i, theatres_1, theatre, data, i;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    theatresInfo = {};
+                    promises = [];
+                    for (_i = 0, theatres_1 = theatres; _i < theatres_1.length; _i++) {
+                        theatre = theatres_1[_i];
+                        promises.push(amcMovies_1.getMovieListings(theatre, dateString));
+                    }
+                    return [4 /*yield*/, Promise.all(promises)];
+                case 1:
+                    data = _a.sent();
+                    for (i = 0; i < theatres.length; i++) {
+                        theatresInfo[theatres[i]] = data[i];
+                    }
+                    return [2 /*return*/, theatresInfo];
+            }
+        });
+    });
+}
 var bodyParser = require('body-parser');
 var express = require('express');
 var cors = require('cors');
 var app = express();
+var theatres = ['amc-columbus-10', 'amc-dublin-village-18', 'amc-lennox-town-center-24'];
 app.use(cors({
     credentials: true,
     origin: true
@@ -49,24 +85,50 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.get('/', function (req, res) {
-    res.setHeader('Content-Type', 'text/html');
-    return res.sendFile('/index.html', { root: __dirname });
-});
-app.get('/api/amc', function (req, res) { return __awaiter(_this, void 0, void 0, function () {
-    var listings, err_1;
+app.get('/api/date/:date', function (req, res) { return __awaiter(_this, void 0, void 0, function () {
+    var _a, _b;
+    return __generator(this, function (_c) {
+        switch (_c.label) {
+            case 0:
+                res.setHeader('Content-Type', 'application/json');
+                _b = (_a = res).send;
+                return [4 /*yield*/, getTheatresInfo(req.params.date)];
+            case 1: return [2 /*return*/, _b.apply(_a, [_c.sent()])];
+        }
+    });
+}); });
+app.get('/api/today', function (req, res) { return __awaiter(_this, void 0, void 0, function () {
+    var today, formattedDate, _a, _b, err_1;
+    return __generator(this, function (_c) {
+        switch (_c.label) {
+            case 0:
+                _c.trys.push([0, 2, , 3]);
+                today = new Date();
+                formattedDate = formatDate(today);
+                _b = (_a = res).send;
+                return [4 /*yield*/, getTheatresInfo(formattedDate)];
+            case 1: return [2 /*return*/, _b.apply(_a, [_c.sent()])];
+            case 2:
+                err_1 = _c.sent();
+                return [2 /*return*/, res.send('Error')];
+            case 3: return [2 /*return*/];
+        }
+    });
+}); });
+app.get('/api/date/:date/theatre/:theatre', function (req, res) { return __awaiter(_this, void 0, void 0, function () {
+    var listings, err_2;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                console.log("Theatre: " + req.query.theatre + ", Date: " + req.query.date);
-                return [4 /*yield*/, amcMovies_1.getMovieListings(req.query.theatre, req.query.date)];
+                console.log("Theatre: " + req.params.theatre + ", Date: " + req.params.date);
+                return [4 /*yield*/, amcMovies_1.getMovieListings(req.params.theatre, req.params.date)];
             case 1:
                 listings = _a.sent();
                 res.setHeader('Content-Type', 'application/json');
                 return [2 /*return*/, res.send(listings)];
             case 2:
-                err_1 = _a.sent();
+                err_2 = _a.sent();
                 return [2 /*return*/, res.send("Error")];
             case 3: return [2 /*return*/];
         }

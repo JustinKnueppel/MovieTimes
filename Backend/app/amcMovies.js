@@ -40,8 +40,6 @@ var cheerio = require('cheerio');
 var db_1 = require("./db");
 var baseURL = 'https://www.amctheatres.com';
 axios.defaults.baseURL = baseURL;
-;
-;
 /**
  * Return the movie listings for the given theatre and date.
  * @param theatre AMC unique theatre name.
@@ -66,39 +64,36 @@ function getMovieListings(theatre, date) {
                 case 2:
                     response = _a.sent();
                     $_1 = cheerio.load(response.data);
-                    $_1('div[class="ShowtimesByTheatre-maincol-scroll"]').find('div[class="ShowtimesByTheatre-film"]').each(function (_, movieElem) {
+                    $_1('div[class="ShowtimesByTheatre-maincol-scroll"]')
+                        .find('div[class="ShowtimesByTheatre-film"]')
+                        .each(function (_, movieElem) {
                         var movie = {
-                            title: "",
-                            link: "",
+                            title: '',
+                            link: '',
                             times: []
                         };
-                        movie.title = $_1(movieElem).find('a.MovieTitleHeader-title > h2').text();
-                        movie.link = "" + baseURL + $_1(movieElem).find('a.MovieTitleHeader-title').attr('href');
-                        var movieTimes = [];
-                        $_1(movieElem).find('div.Showtime a.Btn').each(function (i, e) {
-                            movieTimes.push($_1(e).text());
-                        });
-                        var movieTimeLinks = [];
-                        $_1(movieElem).find('div.Showtime a.Btn').each(function (i, e) {
-                            movieTimeLinks.push($_1(e).attr('href'));
-                        });
-                        movie.times = [];
-                        for (var i = 0; i < movieTimes.length; i++) {
+                        movie.title = $_1(movieElem)
+                            .find('a.MovieTitleHeader-title > h2')
+                            .text();
+                        movie.link = "" + baseURL + $_1(movieElem)
+                            .find('a.MovieTitleHeader-title')
+                            .attr('href');
+                        $_1(movieElem)
+                            .find('div.Showtime a.Btn')
+                            .each(function (i, e) {
                             movie.times.push({
-                                time: movieTimes[i],
-                                link: movieTimeLinks[i]
+                                time: $_1(e).text(),
+                                link: "" + baseURL + $_1(e).attr('href')
                             });
-                        }
-                        ;
+                        });
                         movies.push(movie);
                     });
                     return [3 /*break*/, 4];
                 case 3:
                     err_1 = _a.sent();
-                    console.log("Error");
+                    console.log('Error');
                     return [3 /*break*/, 4];
                 case 4:
-                    ;
                     // Update the database
                     db_1.default.post(theatre, date, movies);
                     return [2 /*return*/, movies];
@@ -126,11 +121,12 @@ function getTheatre(theatreID, date) {
     });
 }
 var _loop_1 = function (theatre) {
-    getMovieListings(theatre, '2019-05-12').then(function (movieListings) {
+    getMovieListings(theatre, '2019-05-12')
+        .then(function (movieListings) {
         console.log("Retrieved data for " + theatre);
     })
         .catch(function (e) {
-        console.log("Error retrieving promise");
+        console.log('Error retrieving promise');
     });
 };
 // Test API
@@ -142,8 +138,11 @@ var _loop_1 = function (theatre) {
 //         console.log('Error occurred in amcMovies');
 //     });
 // Test database
-for (var _i = 0, _a = ['amc-columbus-10', 'amc-dublin-village-18', 'amc-lennox-town-center-24']; _i < _a.length; _i++) {
+for (var _i = 0, _a = [
+    'amc-columbus-10',
+    'amc-dublin-village-18',
+    'amc-lennox-town-center-24'
+]; _i < _a.length; _i++) {
     var theatre = _a[_i];
     _loop_1(theatre);
 }
-;

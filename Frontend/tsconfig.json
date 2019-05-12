@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "esnext",
         "watch": true,
-        "outFile": "scripts/script.js"
+        "outFile": "public/scripts/script.js"
     },
     "files": [  
                 "scripts/temp.ts",

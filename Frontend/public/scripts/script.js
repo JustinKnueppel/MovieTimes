@@ -5,36 +5,36 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/avengers-endgame-45840',
             times: [
                 {
-                    time: '12:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79659814'
+                    time: '2:15pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79659844'
                 },
                 {
-                    time: '12:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929712'
+                    time: '12:15pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79659810'
                 },
                 {
-                    time: '1:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79659832'
+                    time: '1:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929710'
                 },
                 {
                     time: '4:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929651'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79659825'
                 },
                 {
-                    time: '4:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79659856'
+                    time: '5:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79659852'
                 },
                 {
                     time: '6:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929763'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929755'
                 },
                 {
-                    time: '8:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79659815'
+                    time: '7:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79659811'
                 },
                 {
-                    time: '8:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79659857'
+                    time: '8:45pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79659853'
                 }
             ]
         },
@@ -43,36 +43,36 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/pokemon-detective-pikachu-55766',
             times: [
                 {
-                    time: '11:00am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/80088597'
-                },
-                {
-                    time: '11:30am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929749'
-                },
-                {
                     time: '2:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/78692051'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/78692045'
                 },
                 {
-                    time: '12:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79659846'
+                    time: '8:45pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929688'
+                },
+                {
+                    time: '12:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929703'
+                },
+                {
+                    time: '1:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79659826'
+                },
+                {
+                    time: '4:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929649'
                 },
                 {
                     time: '4:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/78692052'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/78692046'
                 },
                 {
                     time: '6:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929695'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929689'
                 },
                 {
                     time: '7:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/78692053'
-                },
-                {
-                    time: '8:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929694'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/78692047'
                 }
             ]
         },
@@ -81,20 +81,16 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/the-hustle-55559',
             times: [
                 {
-                    time: '11:45am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929731'
+                    time: '12:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929725'
                 },
                 {
-                    time: '2:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79658866'
+                    time: '5:15pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79658861'
                 },
                 {
-                    time: '4:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79658867'
-                },
-                {
-                    time: '7:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79658868'
+                    time: '7:45pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79658862'
                 }
             ]
         },
@@ -103,20 +99,16 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/long-shot-55152',
             times: [
                 {
-                    time: '12:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929761'
+                    time: '12:10pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929757'
                 },
                 {
                     time: '3:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929762'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929756'
                 },
                 {
-                    time: '5:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929680'
-                },
-                {
-                    time: '8:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929732'
+                    time: '8:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79659824'
                 }
             ]
         },
@@ -125,20 +117,20 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/poms-59313',
             times: [
                 {
-                    time: '11:45am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929705'
+                    time: '12:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929690'
                 },
                 {
-                    time: '2:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79399398'
+                    time: '2:30pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79399392'
                 },
                 {
                     time: '4:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79399399'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79399393'
                 },
                 {
                     time: '7:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79399400'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79399394'
                 }
             ]
         },
@@ -148,19 +140,19 @@ let theatreinfo = {
             times: [
                 {
                     time: '12:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929669'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929661'
                 },
                 {
                     time: '2:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929668'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929660'
                 },
                 {
                     time: '5:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929667'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929659'
                 },
                 {
                     time: '7:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929666'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929658'
                 }
             ]
         },
@@ -169,20 +161,16 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/uglydolls-53489',
             times: [
                 {
-                    time: '11:00am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929733'
+                    time: '3:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929723'
                 },
                 {
-                    time: '1:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929734'
+                    time: '5:15pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929722'
                 },
                 {
-                    time: '4:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929736'
-                },
-                {
-                    time: '6:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929735'
+                    time: '7:30pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929721'
                 }
             ]
         },
@@ -191,12 +179,12 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/captain-marvel-45838',
             times: [
                 {
-                    time: '3:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929696'
+                    time: '12:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79929724'
                 },
                 {
-                    time: '8:20pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-columbus-10/all/79929681'
+                    time: '2:20pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-columbus-10/all/79658860'
                 }
             ]
         }
@@ -208,71 +196,71 @@ let theatreinfo = {
             times: [
                 {
                     time: '12:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943724'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943718'
                 },
                 {
                     time: '4:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943723'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943717'
                 },
                 {
                     time: '8:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943722'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943716'
                 },
                 {
                     time: '9:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943951'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943943'
                 },
                 {
                     time: '11:00am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79741510'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79741504'
                 },
                 {
                     time: '1:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943776'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943770'
                 },
                 {
                     time: '2:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943747'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943739'
                 },
                 {
                     time: '3:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79741512'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79741506'
                 },
                 {
                     time: '5:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943775'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943769'
                 },
                 {
                     time: '6:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943749'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943741'
                 },
                 {
                     time: '6:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944017'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944009'
                 },
                 {
                     time: '7:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79741511'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79741505'
                 },
                 {
                     time: '7:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943832'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943824'
                 },
                 {
                     time: '8:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943911'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943895'
                 },
                 {
                     time: '9:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943774'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943768'
                 },
                 {
                     time: '10:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943748'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943740'
                 },
                 {
                     time: '10:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944016'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944008'
                 }
             ]
         },
@@ -282,59 +270,59 @@ let theatreinfo = {
             times: [
                 {
                     time: '3:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943803'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943793'
                 },
                 {
                     time: '8:05pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943802'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943792'
                 },
                 {
                     time: '11:15am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/78864815'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/78864805'
                 },
                 {
                     time: '12:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943806'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943796'
                 },
                 {
                     time: '1:05pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944019'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944011'
                 },
                 {
                     time: '1:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/78864816'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/78864806'
                 },
                 {
                     time: '2:20pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943834'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943826'
                 },
                 {
                     time: '3:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944018'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944010'
                 },
                 {
                     time: '4:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/78864819'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/78864809'
                 },
                 {
                     time: '4:50pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943833'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943825'
                 },
                 {
                     time: '5:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943805'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943795'
                 },
                 {
                     time: '6:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/78864818'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/78864808'
                 },
                 {
                     time: '9:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/78864817'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/78864807'
                 },
                 {
                     time: '10:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943804'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943794'
                 }
             ]
         },
@@ -344,27 +332,27 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:45am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79741398'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79741388'
                 },
                 {
                     time: '2:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79741399'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79741389'
                 },
                 {
                     time: '4:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79741400'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79741390'
                 },
                 {
                     time: '7:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79741402'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79741392'
                 },
                 {
                     time: '8:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943983'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943973'
                 },
                 {
                     time: '9:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79741401'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79741391'
                 }
             ]
         },
@@ -374,19 +362,19 @@ let theatreinfo = {
             times: [
                 {
                     time: '1:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944047'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944037'
                 },
                 {
                     time: '4:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944050'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944040'
                 },
                 {
                     time: '7:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944049'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944039'
                 },
                 {
                     time: '10:25pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944048'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944038'
                 }
             ]
         },
@@ -396,23 +384,23 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:05am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79385572'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79385562'
                 },
                 {
                     time: '1:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79385573'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79385563'
                 },
                 {
                     time: '4:05pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79385576'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79385566'
                 },
                 {
                     time: '6:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79385575'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79385565'
                 },
                 {
                     time: '9:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79385574'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79385564'
                 }
             ]
         },
@@ -422,23 +410,23 @@ let theatreinfo = {
             times: [
                 {
                     time: '12:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943693'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943683'
                 },
                 {
                     time: '3:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943692'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943682'
                 },
                 {
                     time: '5:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943691'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943681'
                 },
                 {
                     time: '8:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943690'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943680'
                 },
                 {
                     time: '10:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943694'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943684'
                 }
             ]
         },
@@ -448,19 +436,19 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:00am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943984'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943974'
                 },
                 {
                     time: '1:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943987'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943977'
                 },
                 {
                     time: '3:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943986'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943976'
                 },
                 {
                     time: '6:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943985'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943975'
                 }
             ]
         },
@@ -470,19 +458,19 @@ let theatreinfo = {
             times: [
                 {
                     time: '2:05pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943865'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943855'
                 },
                 {
                     time: '5:05pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943864'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943854'
                 },
                 {
                     time: '7:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943863'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943853'
                 },
                 {
                     time: '10:40pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943862'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943852'
                 }
             ]
         },
@@ -492,19 +480,19 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:20am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943750'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943742'
                 },
                 {
                     time: '12:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943954'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943946'
                 },
                 {
                     time: '3:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943953'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943945'
                 },
                 {
                     time: '6:20pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943952'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943944'
                 }
             ]
         },
@@ -514,11 +502,11 @@ let theatreinfo = {
             times: [
                 {
                     time: '4:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944083'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944073'
                 },
                 {
                     time: '10:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944082'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944072'
                 }
             ]
         },
@@ -528,11 +516,11 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:30am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943831'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943823'
                 },
                 {
                     time: '2:55pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943909'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943893'
                 }
             ]
         },
@@ -542,11 +530,11 @@ let theatreinfo = {
             times: [
                 {
                     time: '1:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944081'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944071'
                 },
                 {
                     time: '7:05pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944080'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944070'
                 }
             ]
         },
@@ -556,11 +544,11 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:00am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944051'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944041'
                 },
                 {
                     time: '5:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943910'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943894'
                 }
             ]
         },
@@ -570,11 +558,11 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:00am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943866'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943856'
                 },
                 {
                     time: '12:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943912'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943896'
                 }
             ]
         },
@@ -584,7 +572,7 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:10am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79944084'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79944074'
                 }
             ]
         },
@@ -594,19 +582,19 @@ let theatreinfo = {
             times: [
                 {
                     time: '12:50pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943908'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943892'
                 },
                 {
                     time: '4:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943907'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943891'
                 },
                 {
                     time: '7:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943906'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943890'
                 },
                 {
                     time: '10:20pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-dublin-village-18/all/79943905'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-dublin-village-18/all/79943889'
                 }
             ]
         }
@@ -618,63 +606,63 @@ let theatreinfo = {
             times: [
                 {
                     time: '1:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995887'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995868'
                 },
                 {
                     time: '5:25pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995886'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995869'
                 },
                 {
                     time: '10:45am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996018'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995998'
                 },
                 {
                     time: '2:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996017'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995997'
                 },
                 {
                     time: '6:25pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996016'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996000'
                 },
                 {
                     time: '10:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996015'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995999'
                 },
                 {
                     time: '2:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995984'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996035'
                 },
                 {
                     time: '9:40pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995983'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996034'
                 },
                 {
                     time: '11:45am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995892'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995856'
                 },
                 {
                     time: '12:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996042'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995953'
                 },
                 {
                     time: '3:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995891'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995855'
                 },
                 {
                     time: '4:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996041'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995955'
                 },
                 {
                     time: '5:50pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995985'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996033'
                 },
                 {
                     time: '7:25pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995890'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995854'
                 },
                 {
                     time: '8:25pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996040'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995954'
                 }
             ]
         },
@@ -684,47 +672,47 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:00am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995889'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995870'
                 },
                 {
                     time: '9:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995888'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995871'
                 },
                 {
-                    time: '12:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/78684342'
+                    time: '12:25pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/78684332'
                 },
                 {
-                    time: '5:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/78684341'
+                    time: '5:25pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/78684331'
                 },
                 {
-                    time: '11:10am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996023'
+                    time: '11:15am',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995872'
                 },
                 {
                     time: '1:50pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995863'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995876'
                 },
                 {
-                    time: '3:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/78684345'
+                    time: '2:55pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/78684334'
                 },
                 {
                     time: '4:20pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995862'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995875'
                 },
                 {
                     time: '7:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995861'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995874'
                 },
                 {
-                    time: '8:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/78684344'
+                    time: '7:55pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/78684333'
                 },
                 {
                     time: '9:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995860'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995873'
                 }
             ]
         },
@@ -733,28 +721,32 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/the-hustle-55559',
             times: [
                 {
-                    time: '1:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79682841'
+                    time: '11:05am',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79682856'
+                },
+                {
+                    time: '1:25pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79682855'
                 },
                 {
                     time: '3:55pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79682840'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79682854'
                 },
                 {
                     time: '6:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79682839'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79682853'
                 },
                 {
                     time: '7:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995925'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995915'
                 },
                 {
                     time: '8:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79682838'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79682852'
                 },
                 {
                     time: '9:40pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995924'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995914'
                 }
             ]
         },
@@ -763,20 +755,24 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/long-shot-55152',
             times: [
                 {
+                    time: '11:05am',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996032'
+                },
+                {
                     time: '1:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996166'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996118'
                 },
                 {
                     time: '3:55pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996167'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996119'
                 },
                 {
                     time: '6:50pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996168'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996120'
                 },
                 {
                     time: '9:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996169'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996121'
                 }
             ]
         },
@@ -786,23 +782,23 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:50am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79385611'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79385601'
                 },
                 {
                     time: '2:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79385612'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79385602'
                 },
                 {
                     time: '4:25pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79385613'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79385603'
                 },
                 {
                     time: '6:50pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79385615'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79385605'
                 },
                 {
                     time: '9:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79385614'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79385604'
                 }
             ]
         },
@@ -812,23 +808,23 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:15am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996081'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996067'
                 },
                 {
                     time: '1:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996080'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996071'
                 },
                 {
                     time: '4:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996079'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996070'
                 },
                 {
                     time: '6:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996078'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996069'
                 },
                 {
                     time: '9:20pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996077'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996068'
                 }
             ]
         },
@@ -838,23 +834,23 @@ let theatreinfo = {
             times: [
                 {
                     time: '10:50am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996175'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996122'
                 },
                 {
                     time: '1:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996176'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996123'
                 },
                 {
-                    time: '3:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996177'
+                    time: '3:50pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996124'
                 },
                 {
                     time: '6:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996178'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996125'
                 },
                 {
                     time: '8:25pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996179'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996126'
                 }
             ]
         },
@@ -863,20 +859,24 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/tolkien-59355',
             times: [
                 {
+                    time: '11:35am',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79384446'
+                },
+                {
                     time: '2:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79384457'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79384447'
                 },
                 {
                     time: '4:55pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79384458'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79384448'
                 },
                 {
                     time: '7:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79384460'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79384450'
                 },
                 {
                     time: '10:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79384459'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79384449'
                 }
             ]
         },
@@ -886,23 +886,23 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:00am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995990'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995975'
                 },
                 {
                     time: '1:50pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995989'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995974'
                 },
                 {
                     time: '4:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995988'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995973'
                 },
                 {
                     time: '7:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995987'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995977'
                 },
                 {
                     time: '10:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995986'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995976'
                 }
             ]
         },
@@ -912,19 +912,19 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:55am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995962'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996135'
                 },
                 {
                     time: '3:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995961'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996186'
                 },
                 {
                     time: '6:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995960'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996187'
                 },
                 {
                     time: '9:25pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995959'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996188'
                 }
             ]
         },
@@ -934,23 +934,23 @@ let theatreinfo = {
             times: [
                 {
                     time: '10:50am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996061'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996050'
                 },
                 {
                     time: '1:20pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996060'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996049'
                 },
                 {
                     time: '3:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996059'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996048'
                 },
                 {
                     time: '6:35pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996058'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996047'
                 },
                 {
                     time: '8:55pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996057'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996051'
                 }
             ]
         },
@@ -959,12 +959,16 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/shazam-46015',
             times: [
                 {
-                    time: '6:55pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995909'
+                    time: '11:55am',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996132'
                 },
                 {
-                    time: '9:55pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995908'
+                    time: '3:20pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996133'
+                },
+                {
+                    time: '10:20pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996134'
                 }
             ]
         },
@@ -973,24 +977,16 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/little-56470',
             times: [
                 {
-                    time: '10:50am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996170'
+                    time: '10:45am',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995903'
                 },
                 {
-                    time: '1:25pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996171'
+                    time: '1:20pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995902'
                 },
                 {
-                    time: '4:05pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996172'
-                },
-                {
-                    time: '6:40pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996173'
-                },
-                {
-                    time: '9:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996174'
+                    time: '10:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995901'
                 }
             ]
         },
@@ -1000,15 +996,15 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:05am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995928'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995917'
                 },
                 {
                     time: '1:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995927'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995916'
                 },
                 {
                     time: '4:25pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995926'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995918'
                 }
             ]
         },
@@ -1018,19 +1014,19 @@ let theatreinfo = {
             times: [
                 {
                     time: '10:45am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995972'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995939'
                 },
                 {
                     time: '1:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995971'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995938'
                 },
                 {
                     time: '3:05pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995970'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995937'
                 },
                 {
                     time: '5:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995969'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995936'
                 }
             ]
         },
@@ -1040,11 +1036,11 @@ let theatreinfo = {
             times: [
                 {
                     time: '7:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995968'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995935'
                 },
                 {
                     time: '9:50pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995967'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995934'
                 }
             ]
         },
@@ -1053,20 +1049,24 @@ let theatreinfo = {
             link: 'https://www.amctheatres.com/movies/us-2019-53983',
             times: [
                 {
+                    time: '10:55am',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996003'
+                },
+                {
                     time: '1:40pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996022'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996002'
                 },
                 {
                     time: '4:20pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996021'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996001'
                 },
                 {
                     time: '7:10pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996020'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996005'
                 },
                 {
                     time: '9:55pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996019'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996004'
                 }
             ]
         },
@@ -1076,41 +1076,27 @@ let theatreinfo = {
             times: [
                 {
                     time: '10:45am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995847'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995833'
                 },
                 {
                     time: '12:55pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995846'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995832'
                 },
                 {
                     time: '3:05pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995845'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995831'
                 },
                 {
                     time: '5:20pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995844'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995830'
                 },
                 {
                     time: '7:40pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995843'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995835'
                 },
                 {
                     time: '9:55pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79995842'
-                }
-            ]
-        },
-        {
-            title: 'Batman Forever Event',
-            link: 'https://www.amctheatres.com/movies/batman-forever-event-60055',
-            times: [
-                {
-                    time: '1:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/78341865'
-                },
-                {
-                    time: '4:00pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/78341864'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79995834'
                 }
             ]
         },
@@ -1120,11 +1106,11 @@ let theatreinfo = {
             times: [
                 {
                     time: '10:55am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996180'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996127'
                 },
                 {
                     time: '1:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996181'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996128'
                 }
             ]
         },
@@ -1134,15 +1120,29 @@ let theatreinfo = {
             times: [
                 {
                     time: '4:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996182'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996129'
                 },
                 {
                     time: '7:30pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996183'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996130'
                 },
                 {
                     time: '10:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996184'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996131'
+                }
+            ]
+        },
+        {
+            title: 'Batman & Robin Event',
+            link: 'https://www.amctheatres.com/movies/batman-robin-event-60058',
+            times: [
+                {
+                    time: '4:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/78341863'
+                },
+                {
+                    time: '7:00pm',
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/78341862'
                 }
             ]
         },
@@ -1152,29 +1152,29 @@ let theatreinfo = {
             times: [
                 {
                     time: '11:40am',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996161'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996113'
                 },
                 {
                     time: '2:15pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996162'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996114'
                 },
                 {
                     time: '4:45pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996163'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996115'
                 },
                 {
                     time: '7:20pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996164'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996116'
                 },
                 {
                     time: '9:50pm',
-                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-12/amc-lennox-town-center-24/all/79996165'
+                    link: 'https://www.amctheatres.com/movie-theatres/showtimes/all/2019-05-14/amc-lennox-town-center-24/all/79996117'
                 }
             ]
         }
     ]
 };
-fetch('justinknueppel.ddns.net:8000/api/today').then((data) => {
+fetch('justinknueppel.ddns.net:8000/api/today').then(data => {
     console.log(data);
 });
 let AMCtheatres = [

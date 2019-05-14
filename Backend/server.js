@@ -37,6 +37,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var amcMovies_1 = require("./app/amcMovies");
+var DateCheck = /^\d{4}-\d{2}-\d{2}$/;
+var TheatreCheck = /^amc-(\w+-)+\d+$/;
 /**
  * Format a date object into a yyyy-mm-dd date string.
  * @param date Date to be formatted.
@@ -76,7 +78,11 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var cors = require('cors');
 var app = express();
-var theatres = ['amc-columbus-10', 'amc-dublin-village-18', 'amc-lennox-town-center-24'];
+var theatres = [
+    'amc-columbus-10',
+    'amc-dublin-village-18',
+    'amc-lennox-town-center-24'
+];
 app.use(cors({
     credentials: true,
     origin: true
@@ -90,10 +96,12 @@ app.get('/api/date/:date', function (req, res) { return __awaiter(_this, void 0,
     return __generator(this, function (_c) {
         switch (_c.label) {
             case 0:
+                if (!DateCheck.test(req.params.date)) return [3 /*break*/, 2];
                 res.setHeader('Content-Type', 'application/json');
                 _b = (_a = res).send;
                 return [4 /*yield*/, getTheatresInfo(req.params.date)];
             case 1: return [2 /*return*/, _b.apply(_a, [_c.sent()])];
+            case 2: return [2 /*return*/, res.send('Incorrect date format')];
         }
     });
 }); });
@@ -120,17 +128,21 @@ app.get('/api/date/:date/theatre/:theatre', function (req, res) { return __await
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                _a.trys.push([0, 2, , 3]);
+                _a.trys.push([0, 4, , 5]);
                 console.log("Theatre: " + req.params.theatre + ", Date: " + req.params.date);
+                if (!(DateCheck.test(req.params.date) &&
+                    TheatreCheck.test(req.params.theatre))) return [3 /*break*/, 2];
                 return [4 /*yield*/, amcMovies_1.getMovieListings(req.params.theatre, req.params.date)];
             case 1:
                 listings = _a.sent();
                 res.setHeader('Content-Type', 'application/json');
                 return [2 /*return*/, res.send(listings)];
-            case 2:
+            case 2: return [2 /*return*/, res.send('Incorrect date or theatre format')];
+            case 3: return [3 /*break*/, 5];
+            case 4:
                 err_2 = _a.sent();
-                return [2 /*return*/, res.send("Error")];
-            case 3: return [2 /*return*/];
+                return [2 /*return*/, res.send('Error')];
+            case 5: return [2 /*return*/];
         }
     });
 }); });

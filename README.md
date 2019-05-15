@@ -5,3 +5,6 @@ This project will pull movie times for specific theatres and create a formatted 
 ## List of Theatres
 
 - AMC Lennox Town Center
+- AMC Hilliard
+- AMC Dublin Village
+

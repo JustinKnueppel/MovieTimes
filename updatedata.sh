@@ -1,3 +1,4 @@
+node Backend/app/updateDB.js
 node tempupdate.js
 tsc --project tsconfig_temp.json
 git add .

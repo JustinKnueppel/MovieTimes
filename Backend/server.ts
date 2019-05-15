@@ -1,6 +1,10 @@
-import {getMovieListings} from "./app/amcMovies";
+import { getMovieListings } from './app/amcMovies';
 
 type DateFormat = string | number;
+
+const DateCheck = /^\d{4}-\d{2}-\d{2}$/;
+
+const TheatreCheck = /^amc-(\w+-)+\d+$/;
 
 /**
  * Format a date object into a yyyy-mm-dd date string.
@@ -22,7 +26,7 @@ async function getTheatresInfo(dateString: string) {
         promises.push(getMovieListings(theatre, dateString));
     }
     let data = await Promise.all(promises);
-    for(let i = 0; i < theatres.length; i++) {
+    for (let i = 0; i < theatres.length; i++) {
         theatresInfo[theatres[i]] = data[i];
     }
     return theatresInfo;
@@ -34,21 +38,33 @@ const cors = require('cors');
 
 const app = express();
 
-const theatres = ['amc-columbus-10', 'amc-dublin-village-18', 'amc-lennox-town-center-24'];
+const theatres = [
+    'amc-columbus-10',
+    'amc-dublin-village-18',
+    'amc-lennox-town-center-24'
+];
 
-app.use(cors({
-    credentials: true, 
-    origin: true
-}));
+app.use(
+    cors({
+        credentials: true,
+        origin: true
+    })
+);
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(
+    bodyParser.urlencoded({
+        extended: true
+    })
+);
 
 app.get('/api/date/:date', async (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    
-    return res.send(await getTheatresInfo(req.params.date));
+    if (DateCheck.test(req.params.date)) {
+        res.setHeader('Content-Type', 'application/json');
+
+        return res.send(await getTheatresInfo(req.params.date));
+    } else {
+        return res.send('Incorrect date format');
+    }
 });
 app.get('/api/today', async (req, res) => {
     try {
@@ -56,7 +72,7 @@ app.get('/api/today', async (req, res) => {
         let formattedDate = formatDate(today);
 
         return res.send(await getTheatresInfo(<string>formattedDate));
-    } catch(err) {
+    } catch (err) {
         return res.send('Error');
     }
 });
@@ -64,11 +80,21 @@ app.get('/api/today', async (req, res) => {
 app.get('/api/date/:date/theatre/:theatre', async (req, res) => {
     try {
         console.log(`Theatre: ${req.params.theatre}, Date: ${req.params.date}`);
-        let listings = await getMovieListings(req.params.theatre, req.params.date);
-        res.setHeader('Content-Type', 'application/json');
-        return res.send(listings);
+        if (
+            DateCheck.test(req.params.date) &&
+            TheatreCheck.test(req.params.theatre)
+        ) {
+            let listings = await getMovieListings(
+                req.params.theatre,
+                req.params.date
+            );
+            res.setHeader('Content-Type', 'application/json');
+            return res.send(listings);
+        } else {
+            return res.send('Incorrect date or theatre format');
+        }
     } catch (err) {
-        return res.send("Error");
+        return res.send('Error');
     }
 });
 

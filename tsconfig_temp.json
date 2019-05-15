@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "outFile": "Frontend/public/scripts/script.js"
+    },
+    "files": [  
+                "Frontend/scripts/temp.ts",
+                "Frontend/scripts/loaddata.ts",
+                "Frontend/scripts/control.ts"
+            ]
+}

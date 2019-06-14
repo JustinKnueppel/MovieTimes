@@ -5,7 +5,6 @@
     },
     "files": [  "server.ts", 
                 "app/amcMovies.ts",
-                "app/db.ts",
                 "app/updateDB.ts"
             ]
 }

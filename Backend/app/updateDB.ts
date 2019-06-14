@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 import { getMovieListings } from './amcMovies';
-import db from './db';
+const db = require('./db');
 
 type DateFormat = string | number;
 
@@ -33,12 +33,12 @@ function removeOldData() {
 /**
  * Removes old data and adds new data to the database.
  */
-async function updateDB() {
-    removeOldData();
+async function updateDB(days: number) {
+    // removeOldData();
 
     let today = new Date();
 
-    for (let dayNum = 0; dayNum <= 7; dayNum++) {
+    for (let dayNum = 0; dayNum <= days; dayNum++) {
         let curDay = new Date();
         curDay.setDate(today.getDate() + dayNum);
 
@@ -63,4 +63,4 @@ function isOld(dateString: string): boolean {
     return Date.parse(dateString) < Date.parse(<string>formatDate(new Date()));
 }
 
-updateDB();
+updateDB(2);

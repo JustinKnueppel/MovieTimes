@@ -38,7 +38,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require('fs');
 var path = require('path');
 var amcMovies_1 = require("./amcMovies");
-var db_1 = require("./db");
+var db = require('./db');
 /**
  * Format a date object into a yyyy-mm-dd date string.
  * @param date Date to be formatted.
@@ -58,25 +58,24 @@ function removeOldData() {
     var datadir = path.join(__dirname, 'data');
     fs.readdirSync(datadir).forEach(function (date, index) {
         if (isOld(date)) {
-            db_1.default.delete(date);
+            db.delete(date);
         }
     });
 }
 /**
  * Removes old data and adds new data to the database.
  */
-function updateDB() {
+function updateDB(days) {
     return __awaiter(this, void 0, void 0, function () {
         var today, dayNum, curDay, formattedDate, _i, _a, theatre;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    removeOldData();
                     today = new Date();
                     dayNum = 0;
                     _b.label = 1;
                 case 1:
-                    if (!(dayNum <= 7)) return [3 /*break*/, 6];
+                    if (!(dayNum <= days)) return [3 /*break*/, 6];
                     curDay = new Date();
                     curDay.setDate(today.getDate() + dayNum);
                     formattedDate = formatDate(curDay);
@@ -112,4 +111,4 @@ function updateDB() {
 function isOld(dateString) {
     return Date.parse(dateString) < Date.parse(formatDate(new Date()));
 }
-updateDB();
+updateDB(2);

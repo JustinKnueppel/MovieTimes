@@ -52,8 +52,8 @@ function getMovieListings(theatre, date) {
             switch (_a.label) {
                 case 0:
                     // If listing is already in database do not retrieve again
-                    if (db_1.default.contains(theatre, date)) {
-                        return [2 /*return*/, Promise.resolve(db_1.default.get(theatre, date))];
+                    if (db_1.db.contains(theatre, date)) {
+                        return [2 /*return*/, db_1.db.get(theatre, date)];
                     }
                     uri = "/movie-theatres/showtimes/all/" + date + "/" + theatre + "/all";
                     movies = [];
@@ -95,8 +95,8 @@ function getMovieListings(theatre, date) {
                     return [3 /*break*/, 4];
                 case 4:
                     // Update the database
-                    db_1.default.post(theatre, date, movies);
-                    return [2 /*return*/, movies];
+                    db_1.db.post(theatre, date, { movies: movies });
+                    return [2 /*return*/, { movies: movies }];
             }
         });
     });

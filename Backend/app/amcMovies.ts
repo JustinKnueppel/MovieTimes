@@ -1,8 +1,6 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-import {db} from './db';
-
 const baseURL: string = 'https://www.amctheatres.com';
 
 axios.defaults.baseURL = baseURL;
@@ -23,10 +21,6 @@ export interface Movie {
  * @param date yyyy-mm-dd date.
  */
 export async function getMovieListings(theatre: string, date: string) {
-    // If listing is already in database do not retrieve again
-    if (db.contains(theatre, date)) {
-        return db.get(theatre, date);
-    }
     // Scrape HTML to get the movie listings
     let uri: string = `/movie-theatres/showtimes/all/${date}/${theatre}/all`;
 
@@ -67,9 +61,8 @@ export async function getMovieListings(theatre: string, date: string) {
     } catch (err) {
         console.log('Error');
     }
-    // Update the database
-    db.post(theatre, date, {movies: movies});
-    return {movies: movies};
+
+    return movies;
 }
 
 /**

@@ -1,8 +1,5 @@
-const fs = require('fs');
-const path = require('path');
 import { getMovieListings } from './amcMovies';
-const db = require('./db');
-
+import {db}  from './db';
 type DateFormat = string | number;
 
 /**
@@ -21,20 +18,25 @@ function formatDate(date: Date): DateFormat {
 /**
  * Remove all data occurring before today.
  */
-function removeOldData() {
-    let datadir = path.join(__dirname, 'data');
-    fs.readdirSync(datadir).forEach((date, index) => {
-        if (isOld(date)) {
-            db.delete(date);
-        }
-    });
+async function removeOldData() {
+    try {
+        let dates = await db.getDates();
+
+        dates.forEach(doc => {
+            if (isOld(doc.id)) {
+                db.delete(doc.id);
+            }
+        });
+    } catch {
+        console.log('Error gettings dates');
+    }
 }
 
 /**
  * Removes old data and adds new data to the database.
  */
 async function updateDB(days: number) {
-    // removeOldData();
+    await removeOldData();
 
     let today = new Date();
 
@@ -49,8 +51,11 @@ async function updateDB(days: number) {
             'amc-dublin-village-18',
             'amc-lennox-town-center-24'
         ]) {
-            await getMovieListings(theatre, <string>formattedDate);
-            console.log(`Retrieved ${theatre} data for ${formattedDate}`);
+            if (!(await db.contains(theatre, formattedDate))) {
+                let movies = await getMovieListings(theatre, <string>formattedDate);
+                db.post(theatre, formattedDate, {movies: movies});
+                console.log(`Retrieved ${theatre} data for ${formattedDate}`);
+            }
         }
     }
 }
@@ -63,4 +68,4 @@ function isOld(dateString: string): boolean {
     return Date.parse(dateString) < Date.parse(<string>formatDate(new Date()));
 }
 
-updateDB(2);
+updateDB(7);

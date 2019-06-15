@@ -35,10 +35,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var fs = require('fs');
-var path = require('path');
 var amcMovies_1 = require("./amcMovies");
-var db = require('./db');
+var db_1 = require("./db");
 /**
  * Format a date object into a yyyy-mm-dd date string.
  * @param date Date to be formatted.
@@ -55,11 +53,28 @@ function formatDate(date) {
  * Remove all data occurring before today.
  */
 function removeOldData() {
-    var datadir = path.join(__dirname, 'data');
-    fs.readdirSync(datadir).forEach(function (date, index) {
-        if (isOld(date)) {
-            db.delete(date);
-        }
+    return __awaiter(this, void 0, void 0, function () {
+        var dates, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _b.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, db_1.db.getDates()];
+                case 1:
+                    dates = _b.sent();
+                    dates.forEach(function (doc) {
+                        if (isOld(doc.id)) {
+                            db_1.db.delete(doc.id);
+                        }
+                    });
+                    return [3 /*break*/, 3];
+                case 2:
+                    _a = _b.sent();
+                    console.log('Error gettings dates');
+                    return [3 /*break*/, 3];
+                case 3: return [2 /*return*/];
+            }
+        });
     });
 }
 /**
@@ -67,15 +82,17 @@ function removeOldData() {
  */
 function updateDB(days) {
     return __awaiter(this, void 0, void 0, function () {
-        var today, dayNum, curDay, formattedDate, _i, _a, theatre;
+        var today, dayNum, curDay, formattedDate, _i, _a, theatre, movies;
         return __generator(this, function (_b) {
             switch (_b.label) {
-                case 0:
+                case 0: return [4 /*yield*/, removeOldData()];
+                case 1:
+                    _b.sent();
                     today = new Date();
                     dayNum = 0;
-                    _b.label = 1;
-                case 1:
-                    if (!(dayNum <= days)) return [3 /*break*/, 6];
+                    _b.label = 2;
+                case 2:
+                    if (!(dayNum <= days)) return [3 /*break*/, 8];
                     curDay = new Date();
                     curDay.setDate(today.getDate() + dayNum);
                     formattedDate = formatDate(curDay);
@@ -84,22 +101,26 @@ function updateDB(days) {
                         'amc-dublin-village-18',
                         'amc-lennox-town-center-24'
                     ];
-                    _b.label = 2;
-                case 2:
-                    if (!(_i < _a.length)) return [3 /*break*/, 5];
-                    theatre = _a[_i];
-                    return [4 /*yield*/, amcMovies_1.getMovieListings(theatre, formattedDate)];
+                    _b.label = 3;
                 case 3:
-                    _b.sent();
-                    console.log("Retrieved " + theatre + " data for " + formattedDate);
-                    _b.label = 4;
+                    if (!(_i < _a.length)) return [3 /*break*/, 7];
+                    theatre = _a[_i];
+                    return [4 /*yield*/, db_1.db.contains(theatre, formattedDate)];
                 case 4:
-                    _i++;
-                    return [3 /*break*/, 2];
+                    if (!!(_b.sent())) return [3 /*break*/, 6];
+                    return [4 /*yield*/, amcMovies_1.getMovieListings(theatre, formattedDate)];
                 case 5:
+                    movies = _b.sent();
+                    db_1.db.post(theatre, formattedDate, { movies: movies });
+                    console.log("Retrieved " + theatre + " data for " + formattedDate);
+                    _b.label = 6;
+                case 6:
+                    _i++;
+                    return [3 /*break*/, 3];
+                case 7:
                     dayNum++;
-                    return [3 /*break*/, 1];
-                case 6: return [2 /*return*/];
+                    return [3 /*break*/, 2];
+                case 8: return [2 /*return*/];
             }
         });
     });
@@ -111,4 +132,4 @@ function updateDB(days) {
 function isOld(dateString) {
     return Date.parse(dateString) < Date.parse(formatDate(new Date()));
 }
-updateDB(2);
+updateDB(7);

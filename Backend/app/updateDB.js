@@ -34,7 +34,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var fs = require('fs');
 var path = require('path');
 var amcMovies_1 = require("./amcMovies");
@@ -58,7 +58,7 @@ function removeOldData() {
     var datadir = path.join(__dirname, 'data');
     fs.readdirSync(datadir).forEach(function (date, index) {
         if (isOld(date)) {
-            db_1.default.delete(date);
+            db_1["default"]["delete"](date);
         }
     });
 }
@@ -76,7 +76,7 @@ function updateDB() {
                     dayNum = 0;
                     _b.label = 1;
                 case 1:
-                    if (!(dayNum <= 7)) return [3 /*break*/, 6];
+                    if (!(dayNum <= 4)) return [3 /*break*/, 6];
                     curDay = new Date();
                     curDay.setDate(today.getDate() + dayNum);
                     formattedDate = formatDate(curDay);

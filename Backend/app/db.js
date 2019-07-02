@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var fs = require('fs');
 var path = require('path');
 var db = {
@@ -42,7 +42,7 @@ var db = {
             return false;
         }
     },
-    delete: function (date) {
+    "delete": function (date) {
         try {
             var folderPath_1 = path.join(__dirname, 'data', date);
             if (fs.existsSync(folderPath_1)) {
@@ -58,4 +58,4 @@ var db = {
         }
     }
 };
-exports.default = db;
+exports["default"] = db;

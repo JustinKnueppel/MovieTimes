@@ -38,7 +38,7 @@ async function updateDB() {
 
     let today = new Date();
 
-    for (let dayNum = 0; dayNum <= 7; dayNum++) {
+    for (let dayNum = 0; dayNum <= 4; dayNum++) {
         let curDay = new Date();
         curDay.setDate(today.getDate() + dayNum);
 

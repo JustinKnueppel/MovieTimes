@@ -34,7 +34,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var axios = require('axios');
 var cheerio = require('cheerio');
 var db_1 = require("./db");
@@ -52,8 +52,8 @@ function getMovieListings(theatre, date) {
             switch (_a.label) {
                 case 0:
                     // If listing is already in database do not retrieve again
-                    if (db_1.default.contains(theatre, date)) {
-                        return [2 /*return*/, Promise.resolve(db_1.default.get(theatre, date))];
+                    if (db_1["default"].contains(theatre, date)) {
+                        return [2 /*return*/, Promise.resolve(db_1["default"].get(theatre, date))];
                     }
                     uri = "/movie-theatres/showtimes/all/" + date + "/" + theatre + "/all";
                     movies = [];
@@ -95,7 +95,7 @@ function getMovieListings(theatre, date) {
                     return [3 /*break*/, 4];
                 case 4:
                     // Update the database
-                    db_1.default.post(theatre, date, movies);
+                    db_1["default"].post(theatre, date, movies);
                     return [2 /*return*/, movies];
             }
         });

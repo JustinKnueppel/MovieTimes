@@ -1,9 +1,77 @@
+class Db {
+    constructor() {
+        const firebaseConfig = {
+            apiKey: 'AIzaSyAsf1qWw_ZLW6LbydRylzYdYqsU03Gj-b0',
+            authDomain: 'tactile-alloy-241723.firebaseapp.com',
+            databaseURL: 'https://tactile-alloy-241723.firebaseio.com',
+            projectId: 'tactile-alloy-241723',
+            storageBucket: 'tactile-alloy-241723.appspot.com',
+            messagingSenderId: '609012508626',
+            appId: '1:609012508626:web:2285df5a54e240e2'
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        this.db = firebase.firestore();
+    }
 
-let AMCtheatres= [
-    { id: 'amc-lennox-town-center-24', name: 'AMC Lennox', link: 'https://www.amctheatres.com/movie-theatres/amc-lennox-town-center-24' },
-    { id: 'amc-dublin-village-18', name: 'AMC Dublin Village', link: 'https://www.amctheatres.com/movie-theatres/amc-dublin-village-18' },
-    { id: 'amc-columbus-10', name: 'AMC Hilliard', link: 'https://www.amctheatres.com/movie-theatres/amc-columbus-10' }
-];
+    async getTheatres() {
+        const snapshot = await this.db.collection('Theatres').get();
+        let theatreData = [];
+        
+        snapshot.forEach(doc => {
+            theatreData.push({id: doc.id, ...doc.data()});
+        })
+
+        return theatreData;
+    }
+
+    async getShowtimeDoc(theatreID, date) {
+        const dateString = formatDate(date);
+
+        return this.db.collection('Dates')
+            .doc(dateString)
+            .collection('Theatres')
+            .doc(theatreID)
+            .get();
+    }
+
+    async getShowtimes(theatres, dates) {
+        let docs = [];
+
+        theatres.forEach(theatre => {
+            dates.forEach(date => {
+                docs.push(this.getShowtimeDoc(theatre['id'], date).then(doc => {
+                    return {'theatre': theatre['name'],
+                            'theatreLink': theatre['link'],
+                            'date': date,
+                            'movies': doc['movies']}
+                }));
+            });
+        });
+
+        /* Convert to single showtime array */
+        let showtimes = [];
+        
+        docs.forEach(doc => {
+            //TODO: resolve promises
+            doc['movies'].forEach(movie => {
+                movie['times'].forEach(show => {
+                    showtimes.push({
+                        'theatre': doc['theatre'],
+                        'date': doc['date'],
+                        'time': show['time'],
+                        'title': movie['title'],
+                        'movieLink': movie['link'],
+                        'showtimeLink': show['link']
+                    })
+                })
+            })
+        })
+
+        return showtimes;
+    }
+}
 
 /**
  * Format a date object into a yyyy-mm-dd date string.
@@ -21,10 +89,10 @@ function formatDate(date) {
 /**
  * Display theatre options to the user.
  */
-function loadTheatreOptions() {
+function loadTheatreOptions(theatres) {
     let options = document.querySelector('#theatre-options ul');
 
-    for (let theatre of AMCtheatres) {
+    for (let theatre of theatres) {
         let li = document.createElement('li');
 
         let node = document.createElement('input');
@@ -124,27 +192,6 @@ function loadTimeOptions() {
 }
 
 /**
- * Return the theatre info for the given theatre and date.
- * @param date Date of movie info to get.
- * @param theatre Unique name for theatre.
- */
-function getTheatreInfo(date, theatre) {
-    //TODO: Access backend to get real data
-    return theatreinfo[theatre];
-}
-/**
- * Retrieve the stored JSON for all theatres for today.
- */
-function getData() {
-    let data = {};
-    for (let theatre of AMCtheatres) {
-        data[theatre.id] = getTheatreInfo(new Date(), theatre.id);
-    }
-
-    return data;
-}
-
-/**
  * Convert a time string into a date object.
  * @param time hh:mm[am/pm] time string.
  */
@@ -167,31 +214,6 @@ function timeToDate(time) {
     date.setSeconds(0);
     date.setMilliseconds(0);
     return date;
-}
-
-/**
- * Convert theatre information into a list of showtimes.
- * @param theatre Unique theatre name.
- * @param theatreInfo Information about movie showtimes at a given theatre.
- */
-function getShowtimes(theatre, theatreInfo) {
-    let showtimes = [];
-
-    for (let movie of theatreInfo) {
-        for (let showtime of movie.times) {
-            showtimes.push({
-                title: movie.title,
-                movieLink: movie.link,
-                showtime: showtime.time,
-                showtimeLink: showtime.link,
-                theatre: theatre.name,
-                theatreLink: theatre.link,
-                sortTime: timeToDate(showtime.time).getTime()
-            });
-        }
-    }
-
-    return showtimes;
 }
 
 /**
@@ -236,11 +258,6 @@ function loadShowtimes(showtimes) {
         movieTable.appendChild(loadShowtime(showtime));
     }
 }
-
-/*
- * Load all data first, filter later.
- */
-const ALL_DATA = getData();
 
 /*
  * Filter all data by given constraints.
@@ -299,13 +316,31 @@ function loadData(theatresData) {
     );
 }
 
+function getLastXDays(numDays) {
+    let dates = [];
+    for(let offset = 0; offset < numDays; offset++) {
+        let d = new Date();
+        d.setDate(d.getDate()-offset);
+        dates.push(d);
+    }
+
+    return dates;
+}
+
 /**
  * Once DOM has loaded, load in data.
  */
-window.onload = () => {
+window.onload = async () => {
+    const db = new Db();
+    const theatres = await db.getTheatres();
     // Populate filter options.
-    loadTheatreOptions();
+    loadTheatreOptions(theatres);
     loadTimeOptions();
 
-    loadData(ALL_DATA);
+    let dates = getLastXDays(3);
+
+    dates = [new Date(2019, 6, 13)];
+
+    let showtimes = await db.getShowtimes(theatres, dates);
+    loadShowtimes(showtimes);
 };
